@@ -1,0 +1,5 @@
+     12.33         : sowing density (kg seed per hectare)
+     50.00         : 1000 seed mass (gram)
+     75            : germination rate (percent)
+      0.30         : row spacing (meter)
+      0.18         : plant spacing in row (meter)

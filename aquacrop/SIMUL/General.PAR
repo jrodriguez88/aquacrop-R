@@ -1,0 +1,9 @@
+-----value----------XXXXXXXXXX SETTINGS FOR GENERAL SIMULATION PARAMETERS XXXXXXX
+  50                Threshold value [% of RAW] for determination of Inet
+  12                Number of soil compartments (maximum is 12)
+   0.10             Default thickness of soil compartments [m]
+  81                Default value for First daynumber (1..365) of cropping period
+  10.0              Default base temperature (°C) below which no crop development
+  30.0              Default upper temperature threshold for crop development
+ 100                Percentage of soil surface wetted by irrigation in crop season
+ 100                Percentage of soil surface wetted by irrigation off-season 

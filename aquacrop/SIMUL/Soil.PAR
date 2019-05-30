@@ -1,0 +1,6 @@
+     0.30   : considered depth (m) of soil profile for calculation of mean soil water content for CN adjustment
+     1      : CN is adjusted to Antecedent Moisture Class
+    20      : salt diffusion factor (capacity for salt diffusion in micro pores) [%]
+   100      : salt solubility [g/liter]
+    16      : shape factor for effect of soil water content gradient on capillary rise
+     5      : initial abstraction (% of S) for estimation of surface runoff: fixed at 5

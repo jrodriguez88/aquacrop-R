@@ -1,0 +1,14 @@
+TEST OF RICE GRBD15
+   6.1   : AquaCrop Version (May 2018)
+   2     : Surface irrigation: Basin
+ 100     : Percentage of soil surface wetted by irrigation
+   2     : Generate irrigation schedule
+   4     : Time criterion = minimum level of surface water layer between soil bunds
+   2     : Fixed application depth
+
+  From day    Minimum depth (mm) Application depth (mm)    ECw (dS/m)
+=========================================================================
+       1              0                   5                   0.0
+       7              0                   0                   0.0
+      11              0                   5                   0.0
+     100              0                   0                   0.0

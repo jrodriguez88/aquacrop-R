@@ -1,0 +1,42 @@
+-----value----------XXXXXXXXXXXXXXX PARAMETER XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+CROP default settings (when RESET in CROP.PAR)
+   4                Evaporation decline factor (stage 2)
+   1.10             Kc wet bare soil [-]
+   5                Threshold for green CC (% CCxadjusted) below which HI can no longer increase 
+  70                Starting depth of root zone expansion curve (% of Zmin)
+   5.00             Maximum allowable root zone expansion (fixed at 5 cm/day)
+  -6                Shape factor for effect water stress on rootzone expansion
+  20                Required soil water content in top soil for germination (% TAW)
+   1.0              Adjustment factor for FAO-adjustment soil water depletion (p) for various ET
+   3                Number of days after which full effect of deficient aeration
+   1.00             Exponent of senescence factor adjusting drop in photosynthetic activity of dying crop   
+  12                Decrease (percentage) of p(senescence) once early canopy senescence is triggered
+  10                Thickness top soil (cm) in which soil water depletion has to be determinedr
+FIELD default settings (when RESET IN FIELD.PAR)
+  30                maximum water extraction depth by soil evaporation [cm]
+Soil default settings (when RESET IN Soil.PAR)
+   0.30             considered depth (m) of soil profile for calculation of mean soil water content for CN adjustment
+   1                CN is adjusted to Antecedent Moisture Class
+  20                salt diffusion factor (capacity for salt diffusion in micro pores) [%]
+ 100                salt solubility [g/liter]
+  16                shape factor for effect of soil water content gradient on capillary rise
+   5                initial abstraction (% of S) for estimation of surface runoff
+TEMPERATURE default settings (when RESET IN TEMPERATURE.PAR)
+  12.0              Default minimum temperature (°C) if no temperature file is specified
+  28.0              Default maximum temperature (°C) if no temperature file is specified
+   3                Default method for the calculation of growing degree days
+RAINFALL default settings (when RESET IN RAINFALL.PAR)
+   1                Procedure for effective rainfall (USDA-SCS method)
+  70                Effective rainfall as a percentage of 10-day or monthly rainfall (IF Procedure = 2)
+   2                Number of showers in 10-day period (for estimating surface runoff)
+   5                n-th root (for estimating reduction in soil evaporation )
+
+GENERAL default settings - no option for RESET (GENERAL.PAR)
+  50                Threshold value [% of RAW] for determination of Inet
+  12                Number of soil compartments (maximum is 12)
+   0.10             Default thickness of soil compartments [m]
+  81                Default value for First daynumber (1..365) of cropping period
+  10.0              Default base temperature (°C) below which no crop development
+  30.0              Default upper temperature threshold for crop development
+ 100                Percentage of soil surface wetted by irrigation in crop season
+ 100                Percentage of soil surface wetted by irrigation off-season 

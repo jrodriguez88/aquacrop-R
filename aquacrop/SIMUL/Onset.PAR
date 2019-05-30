@@ -1,0 +1,12 @@
+    80     : Cumulative rainfall (mm) to be reached since start search period
+    20     : Total rain (mm) to be reached in a specified number of successive days
+     4     : Length of period (successive days) in which the specified total rain has to be reached
+    40     : Rainfall (mm) to be reached in a decade
+     0.50  : Fraction of ETo that Rain has to exceed in the decade
+     5.0   : Daily minimum air temperature (°C) to be reached in each of the days of a specified period
+     3     : Length of period (successive days) in which the specified daily minimum air temperature is reached
+    10.0   : Daily average air temperature (°C) to be reached in each of the days of a specified period
+     3     : Length of period (successive days) in which the specified daily average air temperature is reached
+    30.0   : Total growing degree days (°C) to be reached in a specified number of successive days
+     7     : Length of period (successive days) in which the specified total GDD has to be reached
+   200.0   : Cumulative growing degree days (°C) to be reached since start search period

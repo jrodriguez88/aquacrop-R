@@ -1,0 +1,4 @@
+-----value----------XXXXXXXXXXXXXXX PARAMETER XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  12.0              Default minimum temperature (°C) if no temperature file is specified
+  28.0              Default maximum temperature (°C) if no temperature file is specified
+   3                Default method for the calculation of growing degree days

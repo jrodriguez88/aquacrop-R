@@ -1,0 +1,12 @@
+   4       : Evaporation decline factor for stage II
+   1.10    : Ke(x) Soil evaporation coefficient for fully wet and non-shaded soil surface
+   5       : Threshold for green CC below which HI can no longer increase (% cover)
+  70       : Starting depth of root zone expansion curve (% of Zmin)
+   5.00    : Maximum allowable root zone expansion (fixed at 5 cm/day)
+  -6       : Shape factor for effect of water stress on root zone expansion
+  20       : Required soil water content in top soil for germination (% TAW)
+   1.0     : Adjustment factor for the FAO-adjustment by ETo of the soil water depletion thresholds (p) 
+   3       : Number of days at which the deficient aeration conditions in the root zone are fully effective
+   1.00    : Exponent of senescence factor adjusting the drop in photosynthetic activity of a crop loosing its green canopy
+  12       : Decrease of p(sen) once early canopy senescence is triggered (% of p(sen))
+  10       : Thickness top soil (cm) in which soil water depletion has to be determined

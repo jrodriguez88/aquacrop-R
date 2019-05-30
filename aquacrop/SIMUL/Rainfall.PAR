@@ -1,0 +1,5 @@
+ Program parameters for processing 10-day or monthly rainfall data
+   1   : Procedure for effective rainfall (USDA-SCS method)
+  70   : Effective rainfall as a percentage of 10-day or monthly rainfall (IF Procedure = 2)
+   2   : Number of showers in 10-day period (for estimating surface runoff)
+   5   : n-th root (for estimating reduction in soil evaporation )

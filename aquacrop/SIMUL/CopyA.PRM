@@ -1,0 +1,3823 @@
+I am groot
+6.0       : AquaCrop Version (March 2017)
+  35570         : First day of simulation period - 21 May 1998      
+  35683         : Last day of simulation period - 11 September 1998
+  35570         : First day of cropping period - 21 May 1998      
+  35683         : Last day of cropping period - 11 September 1998
+      4         : Evaporation decline factor for stage II
+      1.10      : Ke(x) Soil evaporation coefficient for fully wet and non-shaded soil surface
+      5         : Threshold for green CC below which HI can no longer increase (% cover)
+     70         : Starting depth of root zone expansion curve (% of Zmin)
+      5.00      : Maximum allowable root zone expansion (fixed at 5 cm/day)
+     -6         : Shape factor for effect water stress on root zone expansion
+     20         : Required soil water content in top soil for germination (% TAW)
+      1.0       : Adjustment factor for FAO-adjustment soil water depletion (p) by ETo
+      3         : Number of days after which deficient aeration is fully effective
+      1.00      : Exponent of senescence factor adjusting drop in photosynthetic activity of dying crop
+     12         : Decrease of p(sen) once early canopy senescence is triggered (% of p(sen))
+     10         : Thickness top soil (cm) in which soil water depletion has to be determined
+     30         : Depth [cm] of soil profile affected by water extraction by soil evaporation
+      0.30      : Considered depth (m) of soil profile for calculation of mean soil water content for CN adjustment
+      1         : CN is adjusted to Antecedent Moisture Class
+     20         : salt diffusion factor (capacity for salt diffusion in micro pores) [%]
+    100         : salt solubility [g/liter]
+     16         : shape factor for effect of soil water content gradient on capillary rise
+     12.0       : Default minimum temperature (<U+00B0>C) if no temperature file is specified
+     28.0       : Default maximum temperature (<U+00B0>C) if no temperature file is specified
+      3         : Default method for the calculation of growing degree days
+-- 1. Climate (CLI) file
+   Boerasire_Region3.CLI
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+   1.1 Temperature (Tnx or TMP) file
+   Boerasire_Region3.Tnx
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+   1.2 Reference ET (ETo) file
+   Boerasire_Region3.ETo
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+   1.3 Rain (PLU) file
+   Boerasire_Region3.PLU
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+   1.4 Atmospheric CO2 concentration (CO2) file
+   MaunaLoa.CO2
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation management (IRR) file
+   (None)
+   (None)
+-- 4. Field management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater table (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  35577         : First day of simulation period - 28 May 1998      
+  35690         : Last day of simulation period - 18 September 1998
+  35577         : First day of cropping period - 28 May 1998      
+  35690         : Last day of cropping period - 18 September 1998
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  35584         : First day of simulation period - 4 June 1998      
+  35696         : Last day of simulation period - 24 September 1998
+  35584         : First day of cropping period - 4 June 1998      
+  35696         : Last day of cropping period - 24 September 1998
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  35591         : First day of simulation period - 11 June 1998     
+  35703         : Last day of simulation period - 1 October 1998   
+  35591         : First day of cropping period - 11 June 1998     
+  35703         : Last day of cropping period - 1 October 1998   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  35934         : First day of simulation period - 20 May 1999      
+  36050         : Last day of simulation period - 13 September 1999
+  35934         : First day of cropping period - 20 May 1999      
+  36050         : Last day of cropping period - 13 September 1999
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  35941         : First day of simulation period - 27 May 1999      
+  36057         : Last day of simulation period - 20 September 1999
+  35941         : First day of cropping period - 27 May 1999      
+  36057         : Last day of cropping period - 20 September 1999
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  35948         : First day of simulation period - 3 June 1999      
+  36064         : Last day of simulation period - 27 September 1999
+  35948         : First day of cropping period - 3 June 1999      
+  36064         : Last day of cropping period - 27 September 1999
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  35955         : First day of simulation period - 10 June 1999     
+  36071         : Last day of simulation period - 4 October 1999   
+  35955         : First day of cropping period - 10 June 1999     
+  36071         : Last day of cropping period - 4 October 1999   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36298         : First day of simulation period - 18 May 2000      
+  36415         : Last day of simulation period - 12 September 2000
+  36298         : First day of cropping period - 18 May 2000      
+  36415         : Last day of cropping period - 12 September 2000
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36305         : First day of simulation period - 25 May 2000      
+  36422         : Last day of simulation period - 19 September 2000
+  36305         : First day of cropping period - 25 May 2000      
+  36422         : Last day of cropping period - 19 September 2000
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36312         : First day of simulation period - 1 June 2000      
+  36428         : Last day of simulation period - 25 September 2000
+  36312         : First day of cropping period - 1 June 2000      
+  36428         : Last day of cropping period - 25 September 2000
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36319         : First day of simulation period - 8 June 2000      
+  36435         : Last day of simulation period - 2 October 2000   
+  36319         : First day of cropping period - 8 June 2000      
+  36435         : Last day of cropping period - 2 October 2000   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36662         : First day of simulation period - 17 May 2001      
+  36777         : Last day of simulation period - 9 September 2001 
+  36662         : First day of cropping period - 17 May 2001      
+  36777         : Last day of cropping period - 9 September 2001 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36669         : First day of simulation period - 24 May 2001      
+  36784         : Last day of simulation period - 16 September 2001
+  36669         : First day of cropping period - 24 May 2001      
+  36784         : Last day of cropping period - 16 September 2001
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36676         : First day of simulation period - 31 May 2001      
+  36791         : Last day of simulation period - 23 September 2001
+  36676         : First day of cropping period - 31 May 2001      
+  36791         : Last day of cropping period - 23 September 2001
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36683         : First day of simulation period - 7 June 2001      
+  36798         : Last day of simulation period - 30 September 2001
+  36683         : First day of cropping period - 7 June 2001      
+  36798         : Last day of cropping period - 30 September 2001
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  36690         : First day of simulation period - 14 June 2001     
+  36804         : Last day of simulation period - 6 October 2001   
+  36690         : First day of cropping period - 14 June 2001     
+  36804         : Last day of cropping period - 6 October 2001   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37026         : First day of simulation period - 16 May 2002      
+  37142         : Last day of simulation period - 9 September 2002 
+  37026         : First day of cropping period - 16 May 2002      
+  37142         : Last day of cropping period - 9 September 2002 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37033         : First day of simulation period - 23 May 2002      
+  37149         : Last day of simulation period - 16 September 2002
+  37033         : First day of cropping period - 23 May 2002      
+  37149         : Last day of cropping period - 16 September 2002
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37040         : First day of simulation period - 30 May 2002      
+  37155         : Last day of simulation period - 22 September 2002
+  37040         : First day of cropping period - 30 May 2002      
+  37155         : Last day of cropping period - 22 September 2002
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37047         : First day of simulation period - 6 June 2002      
+  37162         : Last day of simulation period - 29 September 2002
+  37047         : First day of cropping period - 6 June 2002      
+  37162         : Last day of cropping period - 29 September 2002
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37054         : First day of simulation period - 13 June 2002     
+  37168         : Last day of simulation period - 5 October 2002   
+  37054         : First day of cropping period - 13 June 2002     
+  37168         : Last day of cropping period - 5 October 2002   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37390         : First day of simulation period - 15 May 2003      
+  37505         : Last day of simulation period - 7 September 2003 
+  37390         : First day of cropping period - 15 May 2003      
+  37505         : Last day of cropping period - 7 September 2003 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37397         : First day of simulation period - 22 May 2003      
+  37512         : Last day of simulation period - 14 September 2003
+  37397         : First day of cropping period - 22 May 2003      
+  37512         : Last day of cropping period - 14 September 2003
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37404         : First day of simulation period - 29 May 2003      
+  37519         : Last day of simulation period - 21 September 2003
+  37404         : First day of cropping period - 29 May 2003      
+  37519         : Last day of cropping period - 21 September 2003
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37411         : First day of simulation period - 5 June 2003      
+  37525         : Last day of simulation period - 27 September 2003
+  37411         : First day of cropping period - 5 June 2003      
+  37525         : Last day of cropping period - 27 September 2003
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37418         : First day of simulation period - 12 June 2003     
+  37532         : Last day of simulation period - 4 October 2003   
+  37418         : First day of cropping period - 12 June 2003     
+  37532         : Last day of cropping period - 4 October 2003   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37761         : First day of simulation period - 20 May 2004      
+  37877         : Last day of simulation period - 13 September 2004
+  37761         : First day of cropping period - 20 May 2004      
+  37877         : Last day of cropping period - 13 September 2004
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37768         : First day of simulation period - 27 May 2004      
+  37883         : Last day of simulation period - 19 September 2004
+  37768         : First day of cropping period - 27 May 2004      
+  37883         : Last day of cropping period - 19 September 2004
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37775         : First day of simulation period - 3 June 2004      
+  37890         : Last day of simulation period - 26 September 2004
+  37775         : First day of cropping period - 3 June 2004      
+  37890         : Last day of cropping period - 26 September 2004
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  37782         : First day of simulation period - 10 June 2004     
+  37896         : Last day of simulation period - 2 October 2004   
+  37782         : First day of cropping period - 10 June 2004     
+  37896         : Last day of cropping period - 2 October 2004   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38125         : First day of simulation period - 19 May 2005      
+  38238         : Last day of simulation period - 9 September 2005 
+  38125         : First day of cropping period - 19 May 2005      
+  38238         : Last day of cropping period - 9 September 2005 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38132         : First day of simulation period - 26 May 2005      
+  38244         : Last day of simulation period - 15 September 2005
+  38132         : First day of cropping period - 26 May 2005      
+  38244         : Last day of cropping period - 15 September 2005
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38139         : First day of simulation period - 2 June 2005      
+  38251         : Last day of simulation period - 22 September 2005
+  38139         : First day of cropping period - 2 June 2005      
+  38251         : Last day of cropping period - 22 September 2005
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38146         : First day of simulation period - 9 June 2005      
+  38258         : Last day of simulation period - 29 September 2005
+  38146         : First day of cropping period - 9 June 2005      
+  38258         : Last day of cropping period - 29 September 2005
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38489         : First day of simulation period - 18 May 2006      
+  38604         : Last day of simulation period - 10 September 2006
+  38489         : First day of cropping period - 18 May 2006      
+  38604         : Last day of cropping period - 10 September 2006
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38496         : First day of simulation period - 25 May 2006      
+  38611         : Last day of simulation period - 17 September 2006
+  38496         : First day of cropping period - 25 May 2006      
+  38611         : Last day of cropping period - 17 September 2006
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38503         : First day of simulation period - 1 June 2006      
+  38617         : Last day of simulation period - 23 September 2006
+  38503         : First day of cropping period - 1 June 2006      
+  38617         : Last day of cropping period - 23 September 2006
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38510         : First day of simulation period - 8 June 2006      
+  38624         : Last day of simulation period - 30 September 2006
+  38510         : First day of cropping period - 8 June 2006      
+  38624         : Last day of cropping period - 30 September 2006
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38517         : First day of simulation period - 15 June 2006     
+  38630         : Last day of simulation period - 6 October 2006   
+  38517         : First day of cropping period - 15 June 2006     
+  38630         : Last day of cropping period - 6 October 2006   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38853         : First day of simulation period - 17 May 2007      
+  38968         : Last day of simulation period - 9 September 2007 
+  38853         : First day of cropping period - 17 May 2007      
+  38968         : Last day of cropping period - 9 September 2007 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38860         : First day of simulation period - 24 May 2007      
+  38975         : Last day of simulation period - 16 September 2007
+  38860         : First day of cropping period - 24 May 2007      
+  38975         : Last day of cropping period - 16 September 2007
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38867         : First day of simulation period - 31 May 2007      
+  38981         : Last day of simulation period - 22 September 2007
+  38867         : First day of cropping period - 31 May 2007      
+  38981         : Last day of cropping period - 22 September 2007
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38874         : First day of simulation period - 7 June 2007      
+  38988         : Last day of simulation period - 29 September 2007
+  38874         : First day of cropping period - 7 June 2007      
+  38988         : Last day of cropping period - 29 September 2007
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  38881         : First day of simulation period - 14 June 2007     
+  38995         : Last day of simulation period - 6 October 2007   
+  38881         : First day of cropping period - 14 June 2007     
+  38995         : Last day of cropping period - 6 October 2007   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39217         : First day of simulation period - 15 May 2008      
+  39332         : Last day of simulation period - 7 September 2008 
+  39217         : First day of cropping period - 15 May 2008      
+  39332         : Last day of cropping period - 7 September 2008 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39224         : First day of simulation period - 22 May 2008      
+  39339         : Last day of simulation period - 14 September 2008
+  39224         : First day of cropping period - 22 May 2008      
+  39339         : Last day of cropping period - 14 September 2008
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39231         : First day of simulation period - 29 May 2008      
+  39346         : Last day of simulation period - 21 September 2008
+  39231         : First day of cropping period - 29 May 2008      
+  39346         : Last day of cropping period - 21 September 2008
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39238         : First day of simulation period - 5 June 2008      
+  39352         : Last day of simulation period - 27 September 2008
+  39238         : First day of cropping period - 5 June 2008      
+  39352         : Last day of cropping period - 27 September 2008
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39245         : First day of simulation period - 12 June 2008     
+  39359         : Last day of simulation period - 4 October 2008   
+  39245         : First day of cropping period - 12 June 2008     
+  39359         : Last day of cropping period - 4 October 2008   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39588         : First day of simulation period - 21 May 2009      
+  39699         : Last day of simulation period - 9 September 2009 
+  39588         : First day of cropping period - 21 May 2009      
+  39699         : Last day of cropping period - 9 September 2009 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39595         : First day of simulation period - 28 May 2009      
+  39705         : Last day of simulation period - 15 September 2009
+  39595         : First day of cropping period - 28 May 2009      
+  39705         : Last day of cropping period - 15 September 2009
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39602         : First day of simulation period - 4 June 2009      
+  39712         : Last day of simulation period - 22 September 2009
+  39602         : First day of cropping period - 4 June 2009      
+  39712         : Last day of cropping period - 22 September 2009
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39609         : First day of simulation period - 11 June 2009     
+  39718         : Last day of simulation period - 28 September 2009
+  39609         : First day of cropping period - 11 June 2009     
+  39718         : Last day of cropping period - 28 September 2009
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39952         : First day of simulation period - 20 May 2010      
+  40064         : Last day of simulation period - 9 September 2010 
+  39952         : First day of cropping period - 20 May 2010      
+  40064         : Last day of cropping period - 9 September 2010 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39959         : First day of simulation period - 27 May 2010      
+  40071         : Last day of simulation period - 16 September 2010
+  39959         : First day of cropping period - 27 May 2010      
+  40071         : Last day of cropping period - 16 September 2010
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39966         : First day of simulation period - 3 June 2010      
+  40078         : Last day of simulation period - 23 September 2010
+  39966         : First day of cropping period - 3 June 2010      
+  40078         : Last day of cropping period - 23 September 2010
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  39973         : First day of simulation period - 10 June 2010     
+  40085         : Last day of simulation period - 30 September 2010
+  39973         : First day of cropping period - 10 June 2010     
+  40085         : Last day of cropping period - 30 September 2010
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40316         : First day of simulation period - 19 May 2011      
+  40429         : Last day of simulation period - 9 September 2011 
+  40316         : First day of cropping period - 19 May 2011      
+  40429         : Last day of cropping period - 9 September 2011 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40323         : First day of simulation period - 26 May 2011      
+  40435         : Last day of simulation period - 15 September 2011
+  40323         : First day of cropping period - 26 May 2011      
+  40435         : Last day of cropping period - 15 September 2011
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40330         : First day of simulation period - 2 June 2011      
+  40442         : Last day of simulation period - 22 September 2011
+  40330         : First day of cropping period - 2 June 2011      
+  40442         : Last day of cropping period - 22 September 2011
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40337         : First day of simulation period - 9 June 2011      
+  40448         : Last day of simulation period - 28 September 2011
+  40337         : First day of cropping period - 9 June 2011      
+  40448         : Last day of cropping period - 28 September 2011
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40680         : First day of simulation period - 17 May 2012      
+  40794         : Last day of simulation period - 8 September 2012 
+  40680         : First day of cropping period - 17 May 2012      
+  40794         : Last day of cropping period - 8 September 2012 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40687         : First day of simulation period - 24 May 2012      
+  40800         : Last day of simulation period - 14 September 2012
+  40687         : First day of cropping period - 24 May 2012      
+  40800         : Last day of cropping period - 14 September 2012
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40694         : First day of simulation period - 31 May 2012      
+  40807         : Last day of simulation period - 21 September 2012
+  40694         : First day of cropping period - 31 May 2012      
+  40807         : Last day of cropping period - 21 September 2012
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40701         : First day of simulation period - 7 June 2012      
+  40813         : Last day of simulation period - 27 September 2012
+  40701         : First day of cropping period - 7 June 2012      
+  40813         : Last day of cropping period - 27 September 2012
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  40708         : First day of simulation period - 14 June 2012     
+  40819         : Last day of simulation period - 3 October 2012   
+  40708         : First day of cropping period - 14 June 2012     
+  40819         : Last day of cropping period - 3 October 2012   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41044         : First day of simulation period - 16 May 2013      
+  41159         : Last day of simulation period - 8 September 2013 
+  41044         : First day of cropping period - 16 May 2013      
+  41159         : Last day of cropping period - 8 September 2013 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41051         : First day of simulation period - 23 May 2013      
+  41165         : Last day of simulation period - 14 September 2013
+  41051         : First day of cropping period - 23 May 2013      
+  41165         : Last day of cropping period - 14 September 2013
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41058         : First day of simulation period - 30 May 2013      
+  41172         : Last day of simulation period - 21 September 2013
+  41058         : First day of cropping period - 30 May 2013      
+  41172         : Last day of cropping period - 21 September 2013
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41065         : First day of simulation period - 6 June 2013      
+  41178         : Last day of simulation period - 27 September 2013
+  41065         : First day of cropping period - 6 June 2013      
+  41178         : Last day of cropping period - 27 September 2013
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41072         : First day of simulation period - 13 June 2013     
+  41185         : Last day of simulation period - 4 October 2013   
+  41072         : First day of cropping period - 13 June 2013     
+  41185         : Last day of cropping period - 4 October 2013   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41408         : First day of simulation period - 15 May 2014      
+  41521         : Last day of simulation period - 5 September 2014 
+  41408         : First day of cropping period - 15 May 2014      
+  41521         : Last day of cropping period - 5 September 2014 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41415         : First day of simulation period - 22 May 2014      
+  41528         : Last day of simulation period - 12 September 2014
+  41415         : First day of cropping period - 22 May 2014      
+  41528         : Last day of cropping period - 12 September 2014
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41422         : First day of simulation period - 29 May 2014      
+  41535         : Last day of simulation period - 19 September 2014
+  41422         : First day of cropping period - 29 May 2014      
+  41535         : Last day of cropping period - 19 September 2014
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41429         : First day of simulation period - 5 June 2014      
+  41541         : Last day of simulation period - 25 September 2014
+  41429         : First day of cropping period - 5 June 2014      
+  41541         : Last day of cropping period - 25 September 2014
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41436         : First day of simulation period - 12 June 2014     
+  41548         : Last day of simulation period - 2 October 2014   
+  41436         : First day of cropping period - 12 June 2014     
+  41548         : Last day of cropping period - 2 October 2014   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41779         : First day of simulation period - 21 May 2015      
+  41892         : Last day of simulation period - 11 September 2015
+  41779         : First day of cropping period - 21 May 2015      
+  41892         : Last day of cropping period - 11 September 2015
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41786         : First day of simulation period - 28 May 2015      
+  41899         : Last day of simulation period - 18 September 2015
+  41786         : First day of cropping period - 28 May 2015      
+  41899         : Last day of cropping period - 18 September 2015
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41793         : First day of simulation period - 4 June 2015      
+  41905         : Last day of simulation period - 24 September 2015
+  41793         : First day of cropping period - 4 June 2015      
+  41905         : Last day of cropping period - 24 September 2015
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  41800         : First day of simulation period - 11 June 2015     
+  41912         : Last day of simulation period - 1 October 2015   
+  41800         : First day of cropping period - 11 June 2015     
+  41912         : Last day of cropping period - 1 October 2015   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42143         : First day of simulation period - 19 May 2016      
+  42256         : Last day of simulation period - 9 September 2016 
+  42143         : First day of cropping period - 19 May 2016      
+  42256         : Last day of cropping period - 9 September 2016 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42150         : First day of simulation period - 26 May 2016      
+  42263         : Last day of simulation period - 16 September 2016
+  42150         : First day of cropping period - 26 May 2016      
+  42263         : Last day of cropping period - 16 September 2016
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42157         : First day of simulation period - 2 June 2016      
+  42269         : Last day of simulation period - 22 September 2016
+  42157         : First day of cropping period - 2 June 2016      
+  42269         : Last day of cropping period - 22 September 2016
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42164         : First day of simulation period - 9 June 2016      
+  42276         : Last day of simulation period - 29 September 2016
+  42164         : First day of cropping period - 9 June 2016      
+  42276         : Last day of cropping period - 29 September 2016
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42507         : First day of simulation period - 18 May 2017      
+  42619         : Last day of simulation period - 7 September 2017 
+  42507         : First day of cropping period - 18 May 2017      
+  42619         : Last day of cropping period - 7 September 2017 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42514         : First day of simulation period - 25 May 2017      
+  42626         : Last day of simulation period - 14 September 2017
+  42514         : First day of cropping period - 25 May 2017      
+  42626         : Last day of cropping period - 14 September 2017
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42521         : First day of simulation period - 1 June 2017      
+  42633         : Last day of simulation period - 21 September 2017
+  42521         : First day of cropping period - 1 June 2017      
+  42633         : Last day of cropping period - 21 September 2017
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42528         : First day of simulation period - 8 June 2017      
+  42639         : Last day of simulation period - 27 September 2017
+  42528         : First day of cropping period - 8 June 2017      
+  42639         : Last day of cropping period - 27 September 2017
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42535         : First day of simulation period - 15 June 2017     
+  42646         : Last day of simulation period - 4 October 2017   
+  42535         : First day of cropping period - 15 June 2017     
+  42646         : Last day of cropping period - 4 October 2017   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42871         : First day of simulation period - 17 May 2018      
+  42985         : Last day of simulation period - 8 September 2018 
+  42871         : First day of cropping period - 17 May 2018      
+  42985         : Last day of cropping period - 8 September 2018 
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42878         : First day of simulation period - 24 May 2018      
+  42992         : Last day of simulation period - 15 September 2018
+  42878         : First day of cropping period - 24 May 2018      
+  42992         : Last day of cropping period - 15 September 2018
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42885         : First day of simulation period - 31 May 2018      
+  42998         : Last day of simulation period - 21 September 2018
+  42885         : First day of cropping period - 31 May 2018      
+  42998         : Last day of cropping period - 21 September 2018
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42892         : First day of simulation period - 7 June 2018      
+  43005         : Last day of simulation period - 28 September 2018
+  42892         : First day of cropping period - 7 June 2018      
+  43005         : Last day of cropping period - 28 September 2018
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
+  42899         : First day of simulation period - 14 June 2018     
+  43011         : Last day of simulation period - 4 October 2018   
+  42899         : First day of cropping period - 14 June 2018     
+  43011         : Last day of cropping period - 4 October 2018   
+-- 1. Climate (CLI) file
+Boerasire_Region3.CLI
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.1 Temperature (TMP) file
+Boerasire_Region3.Tnx
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.2 Reference ET (ETo) file
+Boerasire_Region3.ETo
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.3 Rain (PLU) file
+Boerasire_Region3.PLU
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+1.4 Atmospheric CO2 (CO2) file
+MaunaLoa.CO2
+D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 2. Crop (CRO) file
+   GRDB15.CRO
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 3. Irrigation (IRR) file
+   (None)
+   (None)
+-- 4. Management (MAN) file
+   ExampleBunds.MAN
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 5. Soil profile (SOL) file
+   ClayLoam.SOL
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 6. Groundwater (GWT) file
+   (None)
+   (None)
+-- 7. Initial conditions (SW0) file
+   guyana_rice.SW0
+   D:\03_DEVELOPER\rice_guyana\data\aquacrop_files\
+-- 8. Off-season conditions (OFF) file
+   (None)
+   (None)
