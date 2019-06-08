@@ -5,6 +5,9 @@
 
 
 ### Load packages, path and functions
+library(tictoc)
+
+tic()
 library(tidyverse)
 library(data.table)
 library(lubridate)
@@ -12,6 +15,11 @@ library(lubridate)
 # Path of aquacrop files
 aquacrop_files <- paste0(getwd(), "/data/aquacrop_files/")
 plugin_path <- paste0(getwd(), "/plugin/")
+
+wth_data <- fread("data/Boerasire_Region3.txt", col.names = c("rain", "srad", "tmax", "tmin")) %>% as_tibble() %>%
+    mutate(date = seq.Date(make_date(1998, 1, 1),
+                           make_date(2018, 12, 31), "days")) %>%
+    select(date, everything())
 
 
 # function to calculate HUH (growing thermal units) _ tbase,    topt,and thigh depends of crop
@@ -38,10 +46,10 @@ clim_data <- wth_data %>% mutate(HUH = map2_dbl(tmax, tmin, HUH_cal),
                                  HUH2 = ((tmax + tmin)/2) - 8)
 
 
-### Set sowing dates. planting_window dates (<= 1 month), compute by "weeks", "days"
+### Set sowing dates. planting_window dates (<= 40  days), compute by "weeks". Or seven "days"
 max_crop_duration <- 150
-star_sow <- c(5,15)   #c(month, day)
-end_sow <- c(5,15)   #c(month, day)
+star_sow <- c(5,10)   #c(month, day)
+end_sow <- c(6,20)   #c(month, day)
 
 sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
     
@@ -54,7 +62,7 @@ sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
         filter(yday(sow_dates) >= start_sowing_date, 
                yday(sow_dates) <= end_sowing_date) %>% pull(sow_dates)
 }
-sowing_dates <- sow_date_cal(star_sow, end_sow, clim_data, by = "days")
+sowing_dates <- sow_date_cal(star_sow, end_sow, clim_data, by = "weeks")
 
 make_param_df <- function(path, max_crop_duration, sowing_dates){
     ### load aquacrop files
@@ -247,7 +255,13 @@ write_projects <- function(sim_cycles, path, def_params){
 }
 
 map(.x = list_cycles, ~write_projects(.x, plugin_path, def_params))
+toc()
 
-
+tic()
 system("plugin/ACsaV60.exe")
+toc()
+#123.02 sec elapsed
+
+
+
 
