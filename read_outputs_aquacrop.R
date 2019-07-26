@@ -18,7 +18,7 @@ season_files <- list.files(path, pattern = "season")
 daily_files <- list.files(path, pattern = "day")
 
 ###Name variables season/daily files. Name string structure
-filename_var <- c("locality", "region", "soil", "crop_sys")
+#filename_var <- c("locality", "region", "crop", "soil", "crop_sys")
 
 
 ### Function to read season project output
@@ -71,46 +71,46 @@ read_aquacrop_day <- function(file, path){
 ### Function to summary and plot
 
 
-#read_aquacrop_season(file, path)
-season_data <- map(.x = season_files, ~read_aquacrop_season(.x, path)) %>%
-    bind_rows() %>% 
-    mutate(File = str_replace(File, ".PRM", "")) %>%
-    separate(File, filename_var, sep = "_")
-
-daily_data <- map(.x = daily_files, ~read_aquacrop_day(.x, path)) %>%
-    set_names(daily_files) %>%
-    bind_rows(.id = "File") %>% 
-    mutate(File = str_replace(File, "PRMday.OUT", "")) %>%
-    separate(File, filename_var, sep = "_")
-
-## Season plots
-
-season_data %>% 
-    select(locality, Yield, BioMass, Cycle, Rain, crop_sys) %>% 
-    gather("var", "value", -c(locality, crop_sys)) %>% ggplot(aes(value)) +
-    geom_histogram(bins = 10, color="grey") + facet_wrap(var ~., scales = "free") + 
-    theme_classic()
-
-season_data %>% mutate(date = make_date(Year1, Month1, Day1)) %>%
-    select(locality, Yield, BioMass, Cycle, Rain, crop_sys) %>% 
-    gather("var", "value", -c(locality, crop_sys)) %>% 
-    ggplot(aes(locality, value)) +
-    geom_boxplot(aes(color=crop_sys)) + 
-    facet_wrap(var ~., scales = "free") + 
-    theme_classic()
-
-season_data %>% mutate(date = make_date(Year1, Month1, Day1)) %>%
-    select(date, locality, soil, Yield, BioMass, Cycle, Rain, crop_sys) %>% 
-    gather("var", "value", -c(date, locality, soil, crop_sys)) %>% 
-    ggplot(aes(year(date), value)) +
-    stat_summary(aes(color = crop_sys), fun.data = mean_sdl, position=position_jitter()) + 
-    facet_wrap(var ~ ., scales = "free") + 
-    theme_bw()
-
-season_data %>% mutate(date = make_date(Year1, Month1, Day1)) %>%
-    select(date, locality, soil, Yield, BioMass, Tr,ExpStr, StoStr,TempStr, crop_sys) %>% 
-    gather("var", "value", -c(date, locality, soil, crop_sys)) %>% 
-    ggplot(aes(crop_sys, value)) +
-    geom_boxplot(aes(fill = soil)) + 
-    facet_wrap(var ~ ., scales = "free") + 
-    theme_classic()
+####read_aquacrop_season(file, path)
+###season_data <- map(.x = season_files, ~read_aquacrop_season(.x, path)) %>%
+###    bind_rows() %>% 
+###    mutate(File = str_replace(File, ".PRM", "")) %>%
+###    separate(File, filename_var, sep = "_")
+###
+###daily_data <- map(.x = daily_files, ~read_aquacrop_day(.x, path)) %>%
+###    set_names(daily_files) %>%
+###    bind_rows(.id = "File") %>% 
+###    mutate(File = str_replace(File, "PRMday.OUT", "")) %>%
+###    separate(File, filename_var, sep = "_")
+###
+##### Season plots
+###
+###season_data %>% 
+###    select(locality, Yield, BioMass, Cycle, Rain, crop_sys) %>% 
+###    gather("var", "value", -c(locality, crop_sys)) %>% ggplot(aes(value)) +
+###    geom_histogram(bins = 10, color="grey") + facet_wrap(var ~., scales = "free") + 
+###    theme_classic()
+###
+###season_data %>% mutate(date = make_date(Year1, Month1, Day1)) %>%
+###    select(locality, Yield, BioMass, Cycle, Rain, crop_sys) %>% 
+###    gather("var", "value", -c(locality, crop_sys)) %>% 
+###    ggplot(aes(locality, value)) +
+###    geom_boxplot(aes(color=crop_sys)) + 
+###    facet_wrap(var ~., scales = "free") + 
+###    theme_classic()
+###
+###season_data %>% mutate(date = make_date(Year1, Month1, Day1)) %>%
+###    select(date, locality, soil, Yield, BioMass, Cycle, Rain, crop_sys) %>% 
+###    gather("var", "value", -c(date, locality, soil, crop_sys)) %>% 
+###    ggplot(aes(year(date), value)) +
+###    stat_summary(aes(color = crop_sys), fun.data = mean_sdl, position=position_jitter()) + 
+###    facet_wrap(var ~ ., scales = "free") + 
+###    theme_bw()
+###
+###season_data %>% mutate(date = make_date(Year1, Month1, Day1)) %>%
+###    select(date, locality, soil, Yield, BioMass, Tr,ExpStr, StoStr,TempStr, crop_sys) %>% 
+###    gather("var", "value", -c(date, locality, soil, crop_sys)) %>% 
+###    ggplot(aes(crop_sys, value)) +
+###    geom_boxplot(aes(fill = soil)) + 
+###    facet_wrap(var ~ ., scales = "free") + 
+###    theme_classic()
