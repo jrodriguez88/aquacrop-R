@@ -110,3 +110,22 @@ from_soilgrids_to_aquacrop <- function(id_name, soilgrids_data, Penetrability = 
     return(list(id_name = id_name, data = data_inp[-1,], CN = CN, REW = REW))
     
 }
+
+
+#https://cran.r-project.org/web/packages/soiltexture/vignettes/soiltexture_vignette.pdf
+### 'get_STC' function to get Soil Texture Class from soil sand, clay content.. based USDA system class
+get_STC <- function(S, C, sysclass="USDA") {
+    stopifnot(require(soiltexture))
+    
+    Si <- 100-(S+C)
+    dat <- data.frame(SAND=S, CLAY=C, SILT=Si)
+    
+    STC <- TT.points.in.classes(
+        tri.data = dat,
+        class.sys = paste0(sysclass, ".TT"),
+        PiC.type = "t"
+    )
+    
+    return(STC)
+    
+}
