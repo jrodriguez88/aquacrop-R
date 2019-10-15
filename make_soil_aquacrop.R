@@ -4,14 +4,14 @@
 # 2019
 
 ### Load packages
-library(tidyverse)
+#library(tidyverse)
 
 ### Read data from csv 
 
-data <- read.csv("data/soil_to_aquacrop.csv")
-id_name <- "soilname"
-CN <- 72
-REW <- 11
+#data <- read.csv("data/soil_to_aquacrop.csv")
+#id_name <- "soilname"
+#CN <- 72
+#REW <- 11
 ### Function to write . SOL files
 
 make_soil_aquacrop <- function(id_name, data, CN, REW, fromSoilGrids = T, model_version = 6.1) {

@@ -10,14 +10,14 @@ library(sirad)
 library(lubridate)
 
 ### read_data from csv. format (oryza)
-dir.create(paste0(getwd(), "/outputs/weather"))
-path <- paste0(getwd(), "/outputs/weather/")
-id_name <- "test_name"
-lat <- 13.9
-alt <- 657
-co2_file <- "MaunaLoa.CO2"
-wth_data <- read.csv("data/weather_to_aquacrop.csv") %>% 
-    mutate(date = ymd(date))
+#dir.create(paste0(getwd(), "/outputs/weather"))
+#path <- paste0(getwd(), "/outputs/weather/")
+#id_name <- "test_name"
+#lat <- 13.9
+#alt <- 657
+#co2_file <- "MaunaLoa.CO2"
+#wth_data <- read.csv("data/weather_to_aquacrop.csv") %>% 
+#    mutate(date = ymd(date))
 
 
 make_weather_aquacrop <- function(path, id_name, wth_data, lat, alt, co2_file = "MaunaLoa.CO2") {
