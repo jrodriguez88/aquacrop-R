@@ -14,11 +14,11 @@
 #REW <- 11
 ### Function to write . SOL files
 
-make_soil_aquacrop <- function(id_name, data, CN, REW, fromSoilGrids = T, model_version = 6.1) {
+make_soil_aquacrop <- function(path, id_name, data, CN, REW, fromSoilGrids = T, model_version = 6.1) {
     
     data <- as.data.frame(data)
 
-    sink(paste0(id_name, ".SOL"), F)    
+    sink(paste0(path, "/", id_name, ".SOL"), F)    
     cat(paste0(id_name, " AquaCrop soil file - by https://github.com/jrodriguez88"))
     cat('\n')
     cat(paste0("        ", model_version,"                 : AquaCrop Version (May 2018)"), sep = "\n")

@@ -20,6 +20,8 @@ library(lubridate)
 #    mutate(date = ymd(date))
 
 
+
+
 make_weather_aquacrop <- function(path, id_name, wth_data, lat, alt, co2_file = "MaunaLoa.CO2") {
     
     stopifnot(require(sirad))
