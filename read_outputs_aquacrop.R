@@ -3,19 +3,19 @@
 # Author: Rodriguez-Espinoza J.
 # 2019
 
-### Load packages
-library(tidyverse)
-library(data.table)
-library(lubridate)
-
-### Working directory
-path <- paste0(getwd(), "/plugin/OUTP/")
-
-# season files
-season_files <- list.files(path, pattern = "season")
-
-# daily files
-daily_files <- list.files(path, pattern = "day")
+#### Load packages
+#library(tidyverse)
+#library(data.table)
+#library(lubridate)
+#
+#### Working directory
+#path <- paste0(getwd(), "/plugin/OUTP/")
+#
+## season files
+#season_files <- list.files(path, pattern = "season")
+#
+## daily files
+#daily_files <- list.files(path, pattern = "day")
 
 ###Name variables season/daily files. Name string structure
 #filename_var <- c("locality", "region", "crop", "soil", "crop_sys")
