@@ -102,7 +102,7 @@ make_weather_aquacrop <-function(path, id_name, wth_data, lat, alt, co2_file = "
                               TRUE ~ tmin),
             tmax = case_when(is.na(tmax) ~ median(wth_data$tmax, na.rm = T),
                              TRUE ~ tmax),
-            rain = case_when(is.na(rain) ~ median(wth_data$tmin, na.rm = T),
+            rain = case_when(is.na(rain) ~ median(wth_data$rain, na.rm = T),
                              TRUE ~ rain)
         ) 
     
