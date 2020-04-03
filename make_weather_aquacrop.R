@@ -22,42 +22,87 @@ library(lubridate)
 
 
 
-make_weather_aquacrop <- function(path, id_name, wth_data, lat, alt, co2_file = "MaunaLoa.CO2") {
+make_weather_aquacrop <-function(path, id_name, wth_data, lat, alt, co2_file = "MaunaLoa.CO2") {
     
     stopifnot(require(sirad))
     
-    ### Cal ETo
-    ETo_cal <- function(wth_data, lat, alt, alt_ws = 2){
+    if("ETo" %in% colnames(wth_data)){
+        ETo = wth_data$ETo
+    } else if (all(c("rhum", "tmax", "tmin", "srad", "rain") %in% colnames(wth_data) == T)) {
+        ### Cal ETo
+        ETo_cal <- function(wth_data, lat, alt, alt_ws = 2){
+            
+            if (!"wvel" %in% colnames(wth_data)) {
+                wth_data <- mutate(wth_data, wvel = 2)
+                message("Wind Speed = 2 m/s was used")
+            } 
+            
+            ## Estimate clear sky transmissivity
+            extraT <- extrat(lubridate::yday(wth_data$date), radians(lat))$ExtraTerrestrialSolarRadiationDaily
+            
+            ## cal trasmisivity 3% days
+            #    tal <- cst(RefRad = wth_data$srad, days = wth_data$date, extraT = extraT, lat = radians(lat), perce = 5)
+            
+            ETo <- wth_data %>%
+                mutate(
+                    es = sirad::es(tmax, tmin), 
+                    ea = es*rhum/100,
+                    #          ea = if_else(is.na(ea), 0.611*exp(17.27*tmin/(tmin+237.3)), ea),
+                    #            vp = es-ea,
+                    extraT = extraT,
+                    tmean = (tmax+tmin)/2, 
+                    ETo = sirad::et0(tmax, tmin, ea, srad, 0.85, alt, wvel, alt_ws, extraT),
+                    ETo = case_when(is.na(ETo) ~ 0.0023*(tmean + 17.8)*((tmax - tmin)^0.5)*extraT/3,
+                                    TRUE ~ ETo)
+                ) %>%
+                pull(ETo)
+            
+        }
         
-        ## Estimate clear sky transmissivity
-        extraT <- extrat(lubridate::yday(wth_data$date), radians(lat))$ExtraTerrestrialSolarRadiationDaily
+        ETo <- ETo_cal(wth_data, lat, alt)
         
-        ## cal trasmisivity 3% days
-        #    tal <- cst(RefRad = wth_data$srad, days = wth_data$date, extraT = extraT, lat = radians(lat), perce = 5)
+    } else if (all(c("tmax", "tmin") %in% colnames(wth_data) == T)) {
         
-        ETo <- wth_data %>%
-            mutate(
-                es = sirad::es(tmax, tmin), 
-                ea = es*rhum/100,
-                #            vp = es-ea,
-                extraT = extraT, 
-                ETo = sirad::et0(tmax, tmin, ea, srad, 0.85, alt, wvel, alt_ws, extraT),
-                ETo = case_when(is.na(ETo) ~ 0.611*exp(17.27*tmin/(tmin+237.3)),
-                                TRUE ~ ETo)
-            ) %>%
-            pull(ETo)
+        ETo_cal2 <- function(wth_data, lat, alt, alt_ws = 2){
+            
+            if (!"wvel" %in% colnames(wth_data)) {
+                wth_data <- mutate(wth_data, wvel = 2)
+                message("Wind Speed = 2 m/s was used")
+            } 
+            
+            ## Estimate clear sky transmissivity
+            extraT <- extrat(lubridate::yday(wth_data$date), radians(lat))$ExtraTerrestrialSolarRadiationDaily
+            
+            ETo <- wth_data %>% 
+                mutate(extraT = extraT,
+                       ea = 0.611*exp(17.27*tmin/(tmin+237.3)),
+                       tmean = (tmax+tmin)/2, 
+                       srad = 0.16*sqrt(tmax - tmin)*extraT, # Coeficient, coastal
+                       ETo = sirad::et0(tmax, tmin, ea, srad, 0.85, alt, 2, alt_ws, extraT),
+                       ETo = case_when(is.na(ETo) ~ 0.0023*(tmean + 17.8)*((tmax - tmin)^0.5)*extraT/2.5,
+                                       TRUE ~ ETo)) %>% 
+                pull(ETo)
+            
+        }
+        
+        ETo <- ETo_cal2(wth_data, lat, alt)
+        
+        
+    } else {
+        
+        message("No data to calculate ETo!")
         
     }
     
-    ETo <- ETo_cal(wth_data, lat, alt)
+    
     
     data <- wth_data %>%
         mutate(
-            tmin  = case_when(is.na(tmin) ~ mean(wth_data$tmin, na.rm = T),
-                           TRUE ~ tmin),
-            tmax = case_when(is.na(tmax) ~ mean(wth_data$tmax, na.rm = T),
-                            TRUE ~ tmax),
-            rain = case_when(is.na(rain) ~ mean(wth_data$tmin, na.rm = T),
+            tmin  = case_when(is.na(tmin) ~ median(wth_data$tmin, na.rm = T),
+                              TRUE ~ tmin),
+            tmax = case_when(is.na(tmax) ~ median(wth_data$tmax, na.rm = T),
+                             TRUE ~ tmax),
+            rain = case_when(is.na(rain) ~ median(wth_data$tmin, na.rm = T),
                              TRUE ~ rain)
         ) 
     
