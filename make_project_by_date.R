@@ -45,11 +45,10 @@ HUH_cal <- function(tmax, tmin, tbase = 8, topt = 30, thigh = 42.5) {
 
 ## Set sowing dates. planting_window dates (<= 40  days), 
 #sowing_date = ymd("2016-06-24")
-
 make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_duration = 130, clim_data, aquacrop_files, plugin_path, id2){
     
-## Create sowing dates vector, use when requiere 1 date 
-#    sowing_dates  <- c(sowing_date - (5:1), sowing_date + (0:4))
+    ## Create sowing dates vector, use when requiere 1 date 
+    #    sowing_dates  <- c(sowing_date - (5:1), sowing_date + (0:4))
     
     ### load aquacrop files
     clim_file <- list.files(aquacrop_files, pattern = paste0(id_name, ".CLI")) %>% str_remove(".CLI")
@@ -57,7 +56,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
     crop_file <- list.files(aquacrop_files, pattern = paste0(cultivar, ".CRO"))
     irri_file <- list.files(aquacrop_files, ".IRR") %>% c(., "rainfed")
     man_file <-  list.files(aquacrop_files, ".MAN")
-    soil_file <- list.files(aquacrop_files, paste0(id_name, ".SOL"))
+    soil_file <- list.files(aquacrop_files, paste0(".SOL"))
     ini_file <-  list.files(aquacrop_files, ".SW0")
     proj_file <- list.files(aquacrop_files, ".PRM")
     
@@ -67,15 +66,15 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
     
     ### Create multiple combinations of params
     params <- expand.grid(aquacrop_files,
-                           clim_file,
-                           co2_file,
-                           crop_file,
-                           irri_file, 
-                           man_file,
-                           soil_file,
-                           ini_file,
-                           max_crop_duration,
-                           sowing_dates) %>% 
+                          clim_file,
+                          co2_file,
+                          crop_file,
+                          irri_file, 
+                          man_file,
+                          soil_file,
+                          ini_file,
+                          max_crop_duration,
+                          sowing_dates) %>% 
         as_tibble() %>%
         setNames(c("aquacrop_files",
                    "clim_file",
@@ -89,162 +88,161 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
                    "sowing_date"))
     
     
-## Function to calculate and create crop growing cycles
-cal_cycles_project <- function(clim_data,
-                               aquacrop_files,
-                               clim_file,
-                               co2_file,
-                               crop_file,
-                               irri_file, 
-                               man_file,
-                               soil_file,
-                               ini_file,
-                               max_crop_duration,
-                               sowing_date) {
-    
-    # path files
-    path_files <- aquacrop_files %>% str_replace_all(pattern = "/", replacement = "\\\\")
-    
-    ### extract "GDDays: from sowing to maturity" from CRO_file
-    gdd_mt <- read_lines(file = paste0(aquacrop_files, crop_file)) %>%
-        str_subset("GDDays: from sowing to maturity|GDDays: from transplanting to maturity") %>% 
-        str_extract("[0-9]+") %>% as.numeric
-    
-    
-    # calculate crop duration 
-    crop_duration <- clim_data %>% 
-        dplyr::filter(date >= sowing_date,
-                      date <= sowing_date + max_crop_duration) %>%
-        mutate(sum_gdd = cumsum(HUH)) %>%
-        dplyr::filter(sum_gdd<= gdd_mt) %>% 
-        count() %>% pull(n)
-    
-    # Calculate numeric dates
-    first_day <- as.numeric(sowing_date - make_date(1900, 12, 31))
-    last_day <- first_day + crop_duration
-    mat_date <- as.Date(last_day, origin = make_date(1900, 12, 31))
-    
-    #Write grow cycles
-    path_data <- function(){
+    ## Function to calculate and create crop growing cycles
+    cal_cycles_project <- function(clim_data,
+                                   aquacrop_files,
+                                   clim_file,
+                                   co2_file,
+                                   crop_file,
+                                   irri_file, 
+                                   man_file,
+                                   soil_file,
+                                   ini_file,
+                                   max_crop_duration,
+                                   sowing_date) {
         
-        cat(paste0(first_day, "    : First day of simulation period - ", format(sowing_date, "%d %b %Y")))
-        cat('\n')
-        cat(paste0(last_day,  "    : Last day of simulation period - ",  format(mat_date, "%d %b %Y")))
-        cat('\n')
-        cat(paste0(first_day, "    : First day of cropping period - " , format(sowing_date, "%d %b %Y")))
-        cat('\n')
-        cat(paste0(last_day,  "    : Last day of cropping period - "  , format(mat_date, "%d %b %Y")))
-        cat('\n')    
-        cat("-- 1. Climate (CLI) file", sep = '\n')
-        cat(paste0(clim_file, ".CLI"), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("1.1 Temperature (TMP) file", sep = '\n')
-        cat(paste0(clim_file, ".Tnx"), sep = '\n') 
-        cat(paste0(path_files), sep = '\n')
-        cat("1.2 Reference ET (ETo) file", sep = '\n')
-        cat(paste0(clim_file, ".ETo"), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("1.3 Rain (PLU) file", sep = '\n')
-        cat(paste0(clim_file, ".PLU"), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("1.4 Atmospheric CO2 (CO2) file", sep = '\n')
-        cat(paste(co2_file), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("-- 2. Crop (CRO) file", sep = '\n')
-        cat(paste(crop_file), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("-- 3. Irrigation (IRR) file", sep = '\n')
-        if(irri_file=="rainfed"){
-            cat("(None)", sep = '\n')
-            cat("(None)", sep = '\n')
-        } else {
-            cat(paste(irri_file), sep = '\n')
+        # path files
+        path_files <- aquacrop_files %>% str_replace_all(pattern = "/", replacement = "\\\\")
+        
+        ### extract "GDDays: from sowing to maturity" from CRO_file
+        gdd_mt <- read_lines(file = paste0(aquacrop_files, crop_file)) %>%
+            str_subset("GDDays: from sowing to maturity|GDDays: from transplanting to maturity") %>% 
+            str_extract("[0-9]+") %>% as.numeric
+        
+        
+        # calculate crop duration 
+        crop_duration <- clim_data %>% 
+            dplyr::filter(date >= sowing_date,
+                          date <= sowing_date + max_crop_duration) %>%
+            mutate(sum_gdd = cumsum(HUH)) %>%
+            dplyr::filter(sum_gdd<= gdd_mt) %>% 
+            count() %>% pull(n)
+        
+        # Calculate numeric dates
+        first_day <- as.numeric(sowing_date - make_date(1900, 12, 31))
+        last_day <- first_day + crop_duration
+        mat_date <- as.Date(last_day, origin = make_date(1900, 12, 31))
+        
+        #Write grow cycles
+        path_data <- function(){
+            
+            cat(paste0(first_day, "    : First day of simulation period - ", format(sowing_date, "%d %b %Y")))
+            cat('\n')
+            cat(paste0(last_day,  "    : Last day of simulation period - ",  format(mat_date, "%d %b %Y")))
+            cat('\n')
+            cat(paste0(first_day, "    : First day of cropping period - " , format(sowing_date, "%d %b %Y")))
+            cat('\n')
+            cat(paste0(last_day,  "    : Last day of cropping period - "  , format(mat_date, "%d %b %Y")))
+            cat('\n')    
+            cat("-- 1. Climate (CLI) file", sep = '\n')
+            cat(paste0(clim_file, ".CLI"), sep = '\n')
             cat(paste0(path_files), sep = '\n')
+            cat("1.1 Temperature (TMP) file", sep = '\n')
+            cat(paste0(clim_file, ".Tnx"), sep = '\n') 
+            cat(paste0(path_files), sep = '\n')
+            cat("1.2 Reference ET (ETo) file", sep = '\n')
+            cat(paste0(clim_file, ".ETo"), sep = '\n')
+            cat(paste0(path_files), sep = '\n')
+            cat("1.3 Rain (PLU) file", sep = '\n')
+            cat(paste0(clim_file, ".PLU"), sep = '\n')
+            cat(paste0(path_files), sep = '\n')
+            cat("1.4 Atmospheric CO2 (CO2) file", sep = '\n')
+            cat(paste(co2_file), sep = '\n')
+            cat(paste0(path_files), sep = '\n')
+            cat("-- 2. Crop (CRO) file", sep = '\n')
+            cat(paste(crop_file), sep = '\n')
+            cat(paste0(path_files), sep = '\n')
+            cat("-- 3. Irrigation (IRR) file", sep = '\n')
+            if(irri_file=="rainfed"){
+                cat("(None)", sep = '\n')
+                cat("(None)", sep = '\n')
+            } else {
+                cat(paste(irri_file), sep = '\n')
+                cat(paste0(path_files), sep = '\n')
+            }
+            cat("-- 4. Management (MAN) file", sep = '\n')
+            cat(paste(man_file), sep = '\n')
+            cat(paste0(path_files), sep = '\n')
+            cat("-- 5. Soil profile (SOL) file", sep = '\n')
+            cat(paste(soil_file), sep = '\n')
+            cat(paste0(path_files), sep = '\n')
+            cat("-- 6. Groundwater (GWT) file", sep = '\n')
+            cat("(None)", sep = '\n')
+            cat("(None)", sep = '\n')
+            cat("-- 7. Initial conditions (SW0) file", sep = '\n')
+            cat(paste(ini_file), sep = '\n')
+            cat(paste0(path_files), sep = '\n')
+            cat("-- 8. Off-season conditions (OFF) file", sep = '\n')
+            cat("(None)", sep = '\n')
+            cat("(None)", sep = '\n')
         }
-        cat("-- 4. Management (MAN) file", sep = '\n')
-        cat(paste(man_file), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("-- 5. Soil profile (SOL) file", sep = '\n')
-        cat(paste(soil_file), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("-- 6. Groundwater (GWT) file", sep = '\n')
-        cat("(None)", sep = '\n')
-        cat("(None)", sep = '\n')
-        cat("-- 7. Initial conditions (SW0) file", sep = '\n')
-        cat(paste(ini_file), sep = '\n')
-        cat(paste0(path_files), sep = '\n')
-        cat("-- 8. Off-season conditions (OFF) file", sep = '\n')
-        cat("(None)", sep = '\n')
-        cat("(None)", sep = '\n')
+        
+        list(capture.output(path_data()))
+        
     }
     
-    list(capture.output(path_data()))
     
+    ## Function to compute all runs for params table
+    runs_cal <- function(params, clim_data) {
+        
+        params %>% mutate(runs = cal_cycles_project(clim_data, 
+                                                    aquacrop_files,
+                                                    clim_file,
+                                                    co2_file,
+                                                    crop_file,
+                                                    irri_file, 
+                                                    man_file,
+                                                    soil_file,
+                                                    ini_file,
+                                                    max_crop_duration,
+                                                    sowing_date)) 
+        
+    }
+    
+    sim_cycles <- split(params, 1:nrow(params)) %>% 
+        map(., ~runs_cal(., clim_data)) %>%
+        bind_rows() 
+    
+    
+    ## Write PRM files
+    write_projects <- function(sim_cycles, path, def_params, id2){
+        
+        #    description <-  paste(unique(sim_cycles$crop_file), 
+        #                       unique(sim_cycles$clim_file),
+        #                       unique(sim_cycles$soil_file),
+        #                       unique(sim_cycles$irri_file), sep = " - ")
+        
+        prm_name <- paste0(unique(sim_cycles$clim_file), "_",
+                           unique(sim_cycles$crop_file), "_",
+                           id2, "_",
+                           unique(sim_cycles$irri_file)) %>% 
+            str_replace_all(pattern = "[.]+", replacement = "") %>%
+            paste0(., ".PRM")
+        
+        suppressWarnings(dir.create(paste0(path, "/", "LIST")))
+        
+        sink(file = paste(path, "LIST", prm_name, sep = "/"), append = F)
+        cat(paste("I am groot"))
+        cat('\n')
+        cat("6.0       : AquaCrop Version (March 2017)")
+        cat('\n')
+        writeLines(sim_cycles$runs[[1]][1:4])
+        writeLines(def_params)
+        writeLines(sim_cycles$runs[[1]][-c(1:4)])
+        walk(.x=sim_cycles$runs[-1], ~writeLines(.x))
+        sink()    
+        
+    }
+    
+    map(.x = split(sim_cycles, 
+                   list(sim_cycles$crop_file, 
+                        sim_cycles$irri_file, 
+                        sim_cycles$soil_file)),
+        ~write_projects(.x, plugin_path, def_params, id2))
+    
+    #    toc()
+    #25.57 sec elapsed by 1 crop, 
 }
-
-
-## Function to compute all runs for params table
-runs_cal <- function(params, clim_data) {
-    
-    params %>% mutate(runs = cal_cycles_project(clim_data, 
-                                                aquacrop_files,
-                                                clim_file,
-                                                co2_file,
-                                                crop_file,
-                                                irri_file, 
-                                                man_file,
-                                                soil_file,
-                                                ini_file,
-                                                max_crop_duration,
-                                                sowing_date)) 
-    
-}
-
-sim_cycles <- split(params, 1:nrow(params)) %>% 
-    map(., ~runs_cal(., clim_data)) %>%
-    bind_rows() 
-
-
-## Write PRM files
-write_projects <- function(sim_cycles, path, def_params, id2){
-    
-    #    description <-  paste(unique(sim_cycles$crop_file), 
-    #                       unique(sim_cycles$clim_file),
-    #                       unique(sim_cycles$soil_file),
-    #                       unique(sim_cycles$irri_file), sep = " - ")
-    
-    prm_name <- paste0(unique(sim_cycles$clim_file), "_",
-                       unique(sim_cycles$crop_file), "_",
-                       id2, "_",
-                       unique(sim_cycles$irri_file)) %>% 
-        str_replace_all(pattern = "[.]+", replacement = "") %>%
-        paste0(., ".PRM")
-    
-    suppressWarnings(dir.create(paste0(path, "/", "LIST")))
-    
-    sink(file = paste(path, "LIST", prm_name, sep = "/"), append = F)
-    cat(paste("I am groot"))
-    cat('\n')
-    cat("6.0       : AquaCrop Version (March 2017)")
-    cat('\n')
-    writeLines(sim_cycles$runs[[1]][1:4])
-    writeLines(def_params)
-    writeLines(sim_cycles$runs[[1]][-c(1:4)])
-    walk(.x=sim_cycles$runs[-1], ~writeLines(.x))
-    sink()    
-    
-}
-
-map(.x = split(sim_cycles, 
-               list(sim_cycles$crop_file, 
-                    sim_cycles$irri_file, 
-                    sim_cycles$soil_file)),
-    ~write_projects(.x, plugin_path, def_params, id2))
-
-#    toc()
-#25.57 sec elapsed by 1 crop, 
-}
-
 
 #make_project_by_date("AVT_14", sowing_date, 130, clim_data, aquacrop_files, plugin_path)
 
