@@ -39,9 +39,9 @@ HUH_cal <- function(tmax, tmin, tbase = 8, topt = 30, thigh = 42.5) {
 #
 #### set locality and planting_window dates (<= 1 month). require wth_data 
 #clim_data <- read.csv("data/weather_to_aquacrop.csv") %>% 
-    mutate(date = ymd(date)) %>% 
-    mutate(HUH = map2_dbl(tmax, tmin, HUH_cal))
-#
+#    mutate(date = ymd(date)) %>% 
+#    mutate(HUH = map2_dbl(tmax, tmin, HUH_cal))
+##
 
 ## Set sowing dates. planting_window dates (<= 40  days), 
 #sowing_date = ymd("2016-06-24")
