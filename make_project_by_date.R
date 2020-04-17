@@ -318,7 +318,6 @@ make_dates <- function (imonth = 6, fmonth = 8, clim_data) {
 #    pull(to_project) %>%
 #    map(~make_project_by_date(.x$id_name, .x$sowing_dates, .x$cultivar, 130, .x$clim_data, aquacrop_files, .x$plugin_path, .x$id2))
     
-
 sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
     
     start_sowing_date <- make_date(month = star_sow[1], day = star_sow[2]) %>% yday
@@ -329,9 +328,7 @@ sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
         enframe(name = NULL, value = "sow_dates") %>%
         filter(yday(sow_dates) >= start_sowing_date, 
                yday(sow_dates) <= end_sowing_date) %>% pull(sow_dates)
-}    
-
-
+}
 
 
 
