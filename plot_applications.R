@@ -69,7 +69,7 @@ plot_agroclim_hidric <- function(season_data, id_name, file_str, x_breaks = "5 d
     
     data %>%
         ggplot(aes(x = date, 
-                   y = Irri, color = soil, group = interaction(crop_sys, date))) +
+                   y = Irri, color = soil, group = interaction(soil, date))) +
         stat_summary(fun.data = mean_cl_boot) +
         #  facet_wrap(cultivar ~.) +
         facet_grid(. ~ cultivar, scales = "free") +

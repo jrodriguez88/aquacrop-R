@@ -56,7 +56,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
     crop_file <- list.files(aquacrop_files, pattern = paste0(cultivar, ".CRO"))
     irri_file <- list.files(aquacrop_files, ".IRR") %>% c(., "rainfed")
     man_file <-  list.files(aquacrop_files, ".MAN")
-    soil_file <- list.files(aquacrop_files, paste0(".SOL"))
+    soil_file <- list.files(aquacrop_files, paste0(id2, ".SOL"))
     ini_file <-  list.files(aquacrop_files, ".SW0")
     proj_file <- list.files(aquacrop_files, ".PRM")
     
@@ -348,10 +348,10 @@ from_resampling_to_aquacrop <- function(data_resampling, crop, soil, get_sample 
                           select(-c(year, month, day))))
 
 ###extract initial dates from first resampling scenarie
- star_date <- min(month(to_aquacropR$data[[1]]$date))
+# star_date <- 
  
- star_sow <- c(star_date,1)   #c(month, day)
- end_sow <- c(star_date+1,1)  
+ star_sow <- c(min(month(to_aquacropR$data[[1]]$date)),1)   #c(month, day)
+ end_sow <- c((min(month(to_aquacropR$data[[1]]$date))+1),1)  
  
  
  ## Conditional to sample data    
