@@ -67,12 +67,6 @@ plot_agroclim_hidric <- function(season_data, id_name, file_str, x_breaks = "5 d
         mutate(crop_sys = ifelse(str_detect(crop_sys, pattern = "IRR"), "irrigated", crop_sys)) %>%
         filter(crop_sys == "irrigated")
     
-    if(yield_units == "qq/mz"){
-        data <- data %>% mutate(Yield = Yield*700/46)
-    } else if(yield_units == "kg/ha") {
-        data <- data %>% mutate(Yield = Yield*1000)
-    }
-    
     data %>%
         ggplot(aes(x = date, 
                    y = Irri, color = soil, group = interaction(crop_sys, date))) +

@@ -335,6 +335,54 @@ sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
 }
 
 
+## Fucntion to convert resampling outputs (by Esquivel) to aquacrop-R format
+
+from_resampling_to_aquacrop <- function(data_resampling, crop, soil, get_sample = 25, tbase = 8, date_breaks = 5){
+    
+
+## Read data from resampling + arguments    
+    to_aquacropR <- data_resampling$data[[1]] %>%
+    mutate(data = map(data, ~.x %>% 
+                          rename(rain = prec) %>% 
+                          mutate(date=make_date(year, month, day))%>%
+                          select(-c(year, month, day))))
+
+###extract initial dates from first resampling scenarie
+ star_date <- min(month(to_aquacropR$data[[1]]$date))
+ 
+ star_sow <- c(star_date,1)   #c(month, day)
+ end_sow <- c(star_date+1,1)  
+ 
+ 
+ ## Conditional to sample data    
+    if(is.na(get_sample)){
+        data <- to_aquacropR
+    } else {
+        data <- to_aquacropR  %>% sample_n(.,  size = get_sample)
+    }
+
+ 
+ data %>%
+     mutate(clim_data = map(data, ~.x %>% 
+                                mutate(HUH = ((tmax + tmin)/2) - tbase))) %>%
+     mutate(sowing_dates = map(clim_data, ~sow_date_cal(star_sow, end_sow, .x, by = date_breaks)),
+            crop = crop,
+            id2 = soil, 
+            id_name = paste0(localidad, id)) %>% 
+     #data_to_project %>%# slice(1:3) %>% +
+     mutate(to_project = pmap(list(x = id_name, 
+                                   y = sowing_dates,
+                                   z = clim_data, 
+                                   k = crop, 
+                                   m = id2,
+                                   n = plugin_path),
+                              function(x,y,z,k,m, n) list(id_name = x, 
+                                                          sowing_dates = y, 
+                                                          clim_data = z,
+                                                          cultivar = k,
+                                                          plugin_path = n,
+                                                          id2 = m)))
+}
 
 
 
