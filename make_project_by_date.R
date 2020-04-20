@@ -287,7 +287,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
 #test_data <- data_to_project_ %>% filter(Region %in% c("RACCS", "II", "IV", "V")) %>% group_split(Departamento) %>% 
 #        map(~sample_n(.x, size = 3)) %>% bind_rows()
 
-
+## Funtion to calculate  dates from window sowing in weather series
 make_dates <- function (imonth = 6, fmonth = 8, clim_data) {
     
     range_data <- year(range(clim_data$date))
@@ -317,7 +317,11 @@ make_dates <- function (imonth = 6, fmonth = 8, clim_data) {
 #                             ))) %>% 
 #    pull(to_project) %>%
 #    map(~make_project_by_date(.x$id_name, .x$sowing_dates, .x$cultivar, 130, .x$clim_data, aquacrop_files, .x$plugin_path, .x$id2))
-    
+
+
+# Function to calculate dates for simulation// clim_data must to contain date colunm
+#star_sow <- c(4,1)   #c(month, day)
+#end_sow <- c(5,3)  
 sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
     
     start_sowing_date <- make_date(month = star_sow[1], day = star_sow[2]) %>% yday
