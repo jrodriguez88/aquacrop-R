@@ -45,18 +45,18 @@ HUH_cal <- function(tmax, tmin, tbase = 8, topt = 30, thigh = 42.5) {
 
 ## Set sowing dates. planting_window dates (<= 40  days), 
 #sowing_date = ymd("2016-06-24")
-make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_duration = 130, clim_data, aquacrop_files, plugin_path, id2){
+make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_duration = 150, clim_data, aquacrop_files, plugin_path, id2){
     
     ## Create sowing dates vector, use when requiere 1 date 
     #    sowing_dates  <- c(sowing_date - (5:1), sowing_date + (0:4))
-    
+##### add function // eval inputs    
     ### load aquacrop files
     clim_file <- list.files(aquacrop_files, pattern = paste0(id_name, ".CLI")) %>% str_remove(".CLI")
     co2_file <-  list.files(aquacrop_files, ".CO2")
     crop_file <- list.files(aquacrop_files, pattern = paste0(cultivar, ".CRO"))
     irri_file <- list.files(aquacrop_files, ".IRR") %>% c(., "rainfed")
     man_file <-  list.files(aquacrop_files, ".MAN")
-    soil_file <- list.files(aquacrop_files, paste0(id2, ".SOL"))
+    soil_file <- list.files(aquacrop_files, paste0(suelo, ".SOL"))
     ini_file <-  list.files(aquacrop_files, ".SW0")
     proj_file <- list.files(aquacrop_files, ".PRM")
     
@@ -222,7 +222,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
         suppressWarnings(dir.create(paste0(path, "/", "LIST")))
         
         sink(file = paste(path, "LIST", prm_name, sep = "/"), append = F)
-        cat(paste("I am groot"))
+        cat(paste("by https://github.com/jrodriguez88"))
         cat('\n')
         cat("6.0       : AquaCrop Version (March 2017)")
         cat('\n')
@@ -288,11 +288,12 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
 #        map(~sample_n(.x, size = 3)) %>% bind_rows()
 
 ## Funtion to calculate  dates from window sowing in weather series
-make_dates <- function (imonth = 6, fmonth = 8, clim_data) {
+#make_dates
+make_hist_dates <- function (imonth = 6, fmonth = 8, clim_data, date_breaks = 5) {
     
     range_data <- year(range(clim_data$date))
     
-    dates_base <- seq.Date(make_date(month = imonth, day=1), make_date(month = fmonth+1, day=1), by = 5)
+    dates_base <- seq.Date(make_date(month = imonth, day=1), make_date(month = fmonth+1, day=1), by = date_breaks)
     
     map(dates_base,  ~make_date(year=range_data[1]:(range_data[2]-1), month = month(.x), day = day(.x)))
     
@@ -322,9 +323,9 @@ make_dates <- function (imonth = 6, fmonth = 8, clim_data) {
 # Function to calculate dates for simulation// clim_data must to contain date colunm
 #star_sow <- c(4,1)   #c(month, day)
 #end_sow <- c(5,3)  
-sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
+sowing_dates_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
     
-    start_sowing_date <- make_date(month = star_sow[1], day = star_sow[2]) %>% yday
+    start_sowing_date <- make_date(month = start_sow[1], day = start_sow[2]) %>% yday
     end_sowing_date <- make_date(month = end_sow[1], day = end_sow[2]) %>% yday
     
     seq.Date(range(clim_data$date)[1], 
@@ -337,51 +338,51 @@ sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
 
 ## Fucntion to convert resampling outputs (by Esquivel) to aquacrop-R format
 
-from_resampling_to_aquacrop <- function(data_resampling, crop, soil, get_sample = 25, tbase = 8, date_breaks = 5){
+from_resampling_to_aquacrop <- function(data_resampling, localidad, crop, soil, start_sow = 5, id_esc = NULL, get_sample = 25, tbase = 8, date_breaks = 5){
+    message("Hay cambios en esta funcion, posiblemnete necesite modificar los argumentos")
     
-
-## Read data from resampling + arguments    
+    ## Read data from resampling + arguments    
     to_aquacropR <- data_resampling$data[[1]] %>%
-    mutate(data = map(data, ~.x %>% 
-                          rename(rain = prec) %>% 
-                          mutate(date=make_date(year, month, day))%>%
-                          select(-c(year, month, day))))
-
-###extract initial dates from first resampling scenarie
-# star_date <- 
- 
- star_sow <- c(min(month(to_aquacropR$data[[1]]$date)),1)   #c(month, day)
- end_sow <- c((min(month(to_aquacropR$data[[1]]$date))+1),1)  
- 
- 
- ## Conditional to sample data    
+        mutate(data = map(data, ~.x %>% 
+                              rename(rain = prec) %>% 
+                              mutate(date=make_date(year, month, day))%>%
+                              select(-c(year, month, day))))
+    
+    ###extract initial dates from first resampling scenarie
+    # star_date <- 
+    
+    start_sow <- c(start_sow,1)   #c(month, day)
+    end_sow <- c(start_sow+1,2)  
+    
+    
+    ## Conditional to sample data    
     if(is.na(get_sample)){
         data <- to_aquacropR
     } else {
         data <- to_aquacropR  %>% sample_n(.,  size = get_sample)
     }
-
- 
- data %>%
-     mutate(clim_data = map(data, ~.x %>% 
-                                mutate(HUH = ((tmax + tmin)/2) - tbase))) %>%
-     mutate(sowing_dates = map(clim_data, ~sow_date_cal(star_sow, end_sow, .x, by = date_breaks)),
-            crop = crop,
-            id2 = soil, 
-            id_name = paste0(localidad, id)) %>% 
-     #data_to_project %>%# slice(1:3) %>% +
-     mutate(to_project = pmap(list(x = id_name, 
-                                   y = sowing_dates,
-                                   z = clim_data, 
-                                   k = crop, 
-                                   m = id2,
-                                   n = plugin_path),
-                              function(x,y,z,k,m, n) list(id_name = x, 
-                                                          sowing_dates = y, 
-                                                          clim_data = z,
-                                                          cultivar = k,
-                                                          plugin_path = n,
-                                                          id2 = m)))
+    
+    
+    op <- data %>%
+        mutate(clim_data = map(data, ~.x %>% 
+                                   mutate(HUH = ((tmax + tmin)/2) - tbase))) %>%
+        mutate(sowing_dates = map(clim_data, ~sowing_dates_cal(start_sow, end_sow, .x, by = date_breaks)),
+               crop = crop,
+               id2 = soil, 
+               id_name = paste0(localidad, id, "_", id_esc)) %>% 
+        #data_to_project %>%# slice(1:3) %>% +
+        mutate(to_project = pmap(list(x = id_name, 
+                                      y = sowing_dates,
+                                      z = clim_data, 
+                                      k = crop, 
+                                      m = id2,
+                                      n = plugin_path),
+                                 function(x,y,z,k,m, n) list(id_name = x, 
+                                                             sowing_dates = y, 
+                                                             clim_data = z,
+                                                             cultivar = k,
+                                                             plugin_path = n,
+                                                             id2 = m)))
 }
 
 

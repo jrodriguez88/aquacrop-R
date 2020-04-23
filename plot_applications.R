@@ -8,15 +8,19 @@
 
 
 # Plot for agroclimate forecast- yield forecast
-file_str <- c("clima", "cultivar", "soil", "crop_sys")
-plot_agroclim_forecast <- function(season_data, id_name, file_str, yield_units = "t/ha", x_breaks = "5 days"){
+#file_str <- c("clima", "cultivar", "soil", "crop_sys")
+plot_agroclim_forecast <- function(season_data, id_name, file_str = NA, yield_units = "t/ha", x_breaks = "5 days"){
     
+    if(is.na(file_str)){
+        data <- season_data
+    } else {
+        data <- season_data %>% 
+            mutate(date = make_date(Year1, Month1, Day1),
+                   File = str_replace(File, ".PRM", "")) %>%
+            separate(File, file_str, sep = "_") %>%
+            mutate(crop_sys = ifelse(str_detect(crop_sys, pattern = "IRR"), "irrigated", crop_sys))
+    }
     
-    data <- season_data %>% 
-        mutate(date = make_date(Year1, Month1, Day1),
-               File = str_replace(File, ".PRM", "")) %>%
-        separate(File, file_str, sep = "_") %>%
-        mutate(crop_sys = ifelse(str_detect(crop_sys, pattern = "IRR"), "irrigated", crop_sys))
     
     if(yield_units == "qq/mz"){
         data <- data %>% mutate(Yield = Yield*700/46)
@@ -43,7 +47,7 @@ plot_agroclim_forecast <- function(season_data, id_name, file_str, yield_units =
             strip.text = element_text(face = "bold")) +
         #  guides(fill=legend.title())
         labs(x= "Fecha",
-             y= paste0("Rendimiento (", yield_units, ") - *(peso seco"),
+             y= paste0("Rendimiento (", yield_units, ") - *(peso seco)"),
              title = paste0("Simulacion Agroclimatica - ", id_name),
              subtitle = "Modelo de cultivo: AquaCrop (V6) - http://www.fao.org/aquacrop/",
              fill = "Sistema de Cultivo: ", 
@@ -57,15 +61,18 @@ plot_agroclim_forecast <- function(season_data, id_name, file_str, yield_units =
 }
 
 # Plor hidric demand to rise potential production
-plot_agroclim_hidric <- function(season_data, id_name, file_str, x_breaks = "5 days"){
+plot_agroclim_hidric <- function(season_data, id_name, file_str = NA, x_breaks = "5 days"){
     
+    if(is.na(file_str)){
+        data <- season_data
+    } else {
+        data <- season_data %>% 
+            mutate(date = make_date(Year1, Month1, Day1),
+                   File = str_replace(File, ".PRM", "")) %>%
+            separate(File, file_str, sep = "_") %>%
+            mutate(crop_sys = ifelse(str_detect(crop_sys, pattern = "IRR"), "irrigated", crop_sys))
+    }
     
-    data <- season_data %>% 
-        mutate(date = make_date(Year1, Month1, Day1),
-               File = str_replace(File, ".PRM", "")) %>%
-        separate(File, file_str, sep = "_") %>%
-        mutate(crop_sys = ifelse(str_detect(crop_sys, pattern = "IRR"), "irrigated", crop_sys)) %>%
-        filter(crop_sys == "irrigated")
     
     data %>%
         ggplot(aes(x = date, 
@@ -94,3 +101,4 @@ plot_agroclim_hidric <- function(season_data, id_name, file_str, x_breaks = "5 d
     
     
 }
+
