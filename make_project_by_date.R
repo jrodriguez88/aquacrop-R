@@ -8,9 +8,9 @@
 
 ### Load packages, path and functions
 
-library(tidyverse)
-library(data.table)
-library(lubridate)
+#library(tidyverse)
+#library(data.table)
+#library(lubridate)
 #
 #
 ## Path of aquacrop files
@@ -19,7 +19,7 @@ library(lubridate)
 #
 #
 ## function to calculate HUH (growing thermal units) _ tbase,    topt,and thigh depends of crop
-HUH_cal <- function(tmax, tmin, tbase = 8, topt = 30, thigh = 42.5) {
+#HUH_cal <- function(tmax, tmin, tbase = 8, topt = 30, thigh = 42.5) {
     
     tav <- (tmin + tmax)/2
     
@@ -45,7 +45,7 @@ HUH_cal <- function(tmax, tmin, tbase = 8, topt = 30, thigh = 42.5) {
 
 ## Set sowing dates. planting_window dates (<= 40  days), 
 #sowing_date = ymd("2016-06-24")
-make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_duration = 150, clim_data, aquacrop_files, plugin_path, id2){
+make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_data, max_crop_duration = 150, aquacrop_files, plugin_path){
     
     ## Create sowing dates vector, use when requiere 1 date 
     #    sowing_dates  <- c(sowing_date - (5:1), sowing_date + (0:4))
@@ -56,7 +56,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, max_crop_durat
     crop_file <- list.files(aquacrop_files, pattern = paste0(cultivar, ".CRO"))
     irri_file <- list.files(aquacrop_files, ".IRR") %>% c(., "rainfed")
     man_file <-  list.files(aquacrop_files, ".MAN")
-    soil_file <- list.files(aquacrop_files, paste0(suelo, ".SOL"))
+    soil_file <- list.files(aquacrop_files, paste0(soil, ".SOL"))
     ini_file <-  list.files(aquacrop_files, ".SW0")
     proj_file <- list.files(aquacrop_files, ".PRM")
     
