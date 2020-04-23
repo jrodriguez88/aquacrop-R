@@ -205,7 +205,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_dat
     
     
     ## Write PRM files
-    write_projects <- function(sim_cycles, path, def_params, id2){
+    write_projects <- function(sim_cycles, path, def_params, soil){
         
         #    description <-  paste(unique(sim_cycles$crop_file), 
         #                       unique(sim_cycles$clim_file),
@@ -214,7 +214,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_dat
         
         prm_name <- paste0(unique(sim_cycles$clim_file), "_",
                            unique(sim_cycles$crop_file), "_",
-                           id2, "_",
+                           soil, "_",
                            unique(sim_cycles$irri_file)) %>% 
             str_replace_all(pattern = "[.]+", replacement = "") %>%
             paste0(., ".PRM")
@@ -238,7 +238,7 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_dat
                    list(sim_cycles$crop_file, 
                         sim_cycles$irri_file, 
                         sim_cycles$soil_file)),
-        ~write_projects(.x, plugin_path, def_params, id2))
+        ~write_projects(.x, plugin_path, def_params, soil))
     
     #    toc()
     #25.57 sec elapsed by 1 crop, 
@@ -368,21 +368,21 @@ from_resampling_to_aquacrop <- function(data_resampling, localidad, crop, soil, 
                                    mutate(HUH = ((tmax + tmin)/2) - tbase))) %>%
         mutate(sowing_dates = map(clim_data, ~sowing_dates_cal(start_sow, end_sow, .x, by = date_breaks)),
                crop = crop,
-               id2 = soil, 
+               soil = soil, 
                id_name = paste0(localidad, id, "_", id_esc)) %>% 
         #data_to_project %>%# slice(1:3) %>% +
         mutate(to_project = pmap(list(x = id_name, 
                                       y = sowing_dates,
                                       z = clim_data, 
                                       k = crop, 
-                                      m = id2,
+                                      m = soil,
                                       n = plugin_path),
                                  function(x,y,z,k,m, n) list(id_name = x, 
                                                              sowing_dates = y, 
                                                              clim_data = z,
                                                              cultivar = k,
                                                              plugin_path = n,
-                                                             id2 = m)))
+                                                             soil = m)))
 }
 
 
