@@ -339,7 +339,7 @@ sowing_dates_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
 ## Fucntion to convert resampling outputs (by Esquivel) to aquacrop-R format
 
 from_resampling_to_aquacrop <- function(data_resampling, localidad, crop, soil, start_sow = 5, id_esc = NULL, get_sample = 25, tbase = 8, date_breaks = 5){
-    message("Hay cambios en esta funcion, posiblemnete necesite modificar los argumentos")
+    message("Hay cambios en esta funcion, posiblemente necesite modificar  el orden de los argumentos")
     
     ## Read data from resampling + arguments    
     to_aquacropR <- data_resampling$data[[1]] %>%
@@ -369,7 +369,7 @@ from_resampling_to_aquacrop <- function(data_resampling, localidad, crop, soil, 
         mutate(sowing_dates = map(clim_data, ~sowing_dates_cal(start_sow, end_sow, .x, by = date_breaks)),
                crop = crop,
                soil = soil, 
-               id_name = paste0(localidad, id, "_", id_esc)) %>% 
+               id_name = paste0(localidad, id, if(is.null(id_esc)){""}else{paste0("_", id_esc)})) %>% 
         #data_to_project %>%# slice(1:3) %>% +
         mutate(to_project = pmap(list(x = id_name, 
                                       y = sowing_dates,
