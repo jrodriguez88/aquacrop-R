@@ -460,7 +460,7 @@ resampling <-  function(data, CPT_prob, year_forecast){
         a <- Indicators %>% filter(Type == 'min') %>% unnest()
         b <- Indicators %>% filter(Type == 'max') %>% unnest()
         
-        ab <- bind_cols(a, dplyr::select(b, -Type, -day, -month, -year)) %>%
+        ab <- bind_cols(a, dplyr::select(b, -Type, -day, -month, -year) %>% setNames(paste0(names(.), 1))) %>%
             dplyr::mutate(Type = 'mean_mm' , prec = (prec+prec1)/2, tmax = (tmax+tmax1)/2, tmin = (tmin + tmin1)/2 ) %>%
             dplyr::select(-prec1, -tmin1, -tmax1) %>% nest(-Type)
         
@@ -596,7 +596,6 @@ resampling <-  function(data, CPT_prob, year_forecast){
     # dplyr::select(-Row)
     
     return(All_data)}
-
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 #  5. Function to save all files from resampling.  
