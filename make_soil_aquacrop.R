@@ -77,7 +77,7 @@ from_soilgrids_to_aquacrop <- function(id_name, soilgrids_data, Penetrability = 
         mutate(Penetrability = Penetrability,
                TKL = c(0, diff(abs(depth))),
                WCFC = WWP + AWCh1,
-               SSKS = 75*24*10*((((1-(BLDFIE/2650))*100)-WCFC)/(WCFC)^2),   #Method developed by Suleiman and Ritchie (2001)
+               SSKS = 75*24*10*(((((1-(BLDFIE/2650))*100)-WCFC))^2/(WCFC)^2),   #Method developed by Suleiman and Ritchie (2001)
                STC = get_STC(SNDPPT, CLYPPT),
                CRa = case_when(str_detect(STC, "Sa|LoSa|SaLo") ~ (-0.3112 - SSKS*10^(-5)),
                                str_detect(STC, "Lo|SiLo|Si") ~ (-0.4986 + SSKS*9*10^(-5)),
