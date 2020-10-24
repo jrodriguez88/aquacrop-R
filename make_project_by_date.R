@@ -45,17 +45,17 @@
 
 ## Set sowing dates. planting_window dates (<= 40  days), 
 #sowing_date = ymd("2016-06-24")
-make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_data, max_crop_duration = 150, aquacrop_files, plugin_path){
+make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_data, max_crop_duration = 140, aquacrop_files, plugin_path){
     
     ## Create sowing dates vector, use when requiere 1 date 
     #    sowing_dates  <- c(sowing_date - (5:1), sowing_date + (0:4))
-##### add function // eval inputs    
+    ##### add function // eval inputs    
     ### load aquacrop files
     clim_file <- list.files(aquacrop_files, pattern = paste0(id_name, ".CLI")) %>% str_remove(".CLI")
     co2_file <-  list.files(aquacrop_files, ".CO2")
     crop_file <- list.files(aquacrop_files, pattern = paste0(cultivar, ".CRO"))
     irri_file <- list.files(aquacrop_files, ".IRR") %>% c(., "rainfed")
-    man_file <-  list.files(aquacrop_files, ".MAN")
+    man_file <-  if(length(list.files(aquacrop_files, ".MAN")) == 0){"none"} else {list.files(aquacrop_files, ".MAN")}
     soil_file <- list.files(aquacrop_files, paste0(soil, ".SOL"))
     ini_file <-  list.files(aquacrop_files, ".SW0")
     proj_file <- list.files(aquacrop_files, ".PRM")
@@ -109,11 +109,17 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_dat
             str_subset("GDDays: from sowing to maturity|GDDays: from transplanting to maturity") %>% 
             str_extract("[0-9]+") %>% as.numeric
         
+        ### extract Base temperature 
+        tbase <- read_lines(file = paste0(aquacrop_files, crop_file)) %>%
+            str_subset("Base temperature") %>% 
+            str_extract("[0-9]+") %>% as.numeric
+        
+        #    max_crop_duration <- gdd_mt / clim_data %>% mutate(HUH = ((tmax + tmin)/2) - tbase) %>% summarise(median(HUH)) %>% pull(1)
         
         # calculate crop duration 
-        crop_duration <- clim_data %>% 
+        crop_duration <- clim_data %>% mutate(HUH = ((tmax + tmin)/2) - tbase) %>%
             dplyr::filter(date >= sowing_date,
-                          date <= sowing_date + max_crop_duration) %>%
+                          date <= sowing_date + max_crop_duration - 1) %>%
             mutate(sum_gdd = cumsum(HUH)) %>%
             dplyr::filter(sum_gdd<= gdd_mt) %>% 
             count() %>% pull(n)
@@ -161,8 +167,13 @@ make_project_by_date <- function(id_name, sowing_dates, cultivar, soil, clim_dat
                 cat(paste0(path_files), sep = '\n')
             }
             cat("-- 4. Management (MAN) file", sep = '\n')
-            cat(paste(man_file), sep = '\n')
-            cat(paste0(path_files), sep = '\n')
+            if(man_file == "none"){
+                cat("(None)", sep = '\n')
+                cat("(None)", sep = '\n')
+            } else {
+                cat(paste(man_file), sep = '\n')
+                cat(paste0(path_files), sep = '\n')
+            }
             cat("-- 5. Soil profile (SOL) file", sep = '\n')
             cat(paste(soil_file), sep = '\n')
             cat(paste0(path_files), sep = '\n')
@@ -301,9 +312,9 @@ make_hist_dates <- function (imonth = 6, fmonth = 8, clim_data, date_breaks = 5)
 }
 
 
-#to_aquacrop_historic <- test_data %>% select(id_name, Region, Departamento, Municipio, lat, lon, crop, clim_data) %>%
-#    mutate(sowing_dates = map(clim_data, ~make_dates(clim_data = .x))) %>%
-#    unnest(sowing_dates, .preserve = c(clim_data, crop)) %>% mutate(id2 = paste0("id", 1:399))
+to_aquacrop_historic <- test_data %>% select(id_name, Region, Departamento, Municipio, lat, lon, crop, clim_data) %>%
+    mutate(sowing_dates = map(clim_data, ~make_hist_dates(clim_data = .x))) %>%
+    unnest(sowing_dates, .preserve = c(clim_data, crop)) %>% mutate(id2 = paste0("id", 1:399))
 #
 #to_aquacrop_historic %>% split(., rep(1:4, length.out = nrow(.), each = ceiling(nrow(.)/4))) %>% 
 #    set_names(paste0(getwd(), "/plugin", 1:4,"/")) %>% bind_rows(.id = "plugin_path") %>%
@@ -338,8 +349,8 @@ sowing_dates_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
 
 ## Fucntion to convert resampling outputs (by Esquivel) to aquacrop-R format
 
-from_resampling_to_aquacrop <- function(data_resampling, localidad, crop, soil, start_sow = 5, id_esc = NULL, get_sample = 25, tbase = 8, date_breaks = 5){
-    message("Hay cambios en esta funcion, posiblemente necesite modificar  el orden de los argumentos")
+from_resampling_to_aquacrop <- function(data_resampling, localidad, crop, soil, start_sow = 5, id_esc = NULL, get_sample = NA, date_breaks = 5){
+    #    message("Hay cambios en esta funcion, posiblemente necesite modificar  el orden de los argumentos")
     
     ## Read data from resampling + arguments    
     to_aquacropR <- data_resampling$data[[1]] %>%
@@ -364,16 +375,16 @@ from_resampling_to_aquacrop <- function(data_resampling, localidad, crop, soil, 
     
     
     op <- data %>%
-        mutate(clim_data = map(data, ~.x %>% 
-                                   mutate(HUH = ((tmax + tmin)/2) - tbase))) %>%
-        mutate(sowing_dates = map(clim_data, ~sowing_dates_cal(start_sow, end_sow, .x, by = date_breaks)),
+        #        mutate(clim_data = map(data, ~.x %>% 
+        #                                   mutate(HUH = ((tmax + tmin)/2) - tbase))) %>%
+        mutate(sowing_dates = map(data, ~sowing_dates_cal(start_sow, end_sow, .x, by = date_breaks)),
                crop = crop,
                soil = soil, 
                id_name = paste0(localidad, id, if(is.null(id_esc)){""}else{paste0("_", id_esc)})) %>% 
         #data_to_project %>%# slice(1:3) %>% +
         mutate(to_project = pmap(list(x = id_name, 
                                       y = sowing_dates,
-                                      z = clim_data, 
+                                      z = data, 
                                       k = crop, 
                                       m = soil,
                                       n = plugin_path),

@@ -54,7 +54,8 @@ plot_agroclim_forecast <- function(season_data, id_name, file_str = NA, yield_un
              caption = "Fuente: AquaCrop-R(https://github.com/jrodriguez88/aquacrop-R)") +
         scale_fill_manual(values = c(irrigated = "#33CC00", rainfed = "#E69F00"), 
                           labels = c("Irrigado", "Secano")) +
-        scale_x_date(date_breaks = x_breaks , date_labels =  "%b %d", limits = c(min(data$date), max(data$date)))
+        scale_x_date(date_breaks = x_breaks , date_labels =  "%b %d",
+                     limits = c(min(data$date), max(data$date)))
     
     
     
@@ -109,4 +110,6 @@ theme_jre <- theme(
     panel.grid.minor = element_blank(),
     strip.background=element_rect(fill="white", size=1.5, linetype="solid"),
     strip.text = element_text(face = "bold"))
+
+
 

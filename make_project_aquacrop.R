@@ -48,8 +48,8 @@ clim_data <- read.csv("data/weather_to_aquacrop.csv") %>%
 ## Set sowing dates. planting_window dates (<= 40  days), 
 ## compute by "weeks". Or seven "days"
 max_crop_duration <- 140
-star_sow <- c(6,24)   #c(month, day)
-end_sow <- c(6,24)   #c(month, day)
+    star_sow <- c(4,25)   #c(month, day)
+    end_sow <- c(5,15)   #c(month, day)
 
 
 ## Function to create sowing dates vector, 
@@ -64,7 +64,7 @@ sow_date_cal <- function(start_sow, end_sow, clim_data, by = "weeks") {
         filter(yday(sow_dates) >= start_sowing_date, 
                yday(sow_dates) <= end_sowing_date) %>% pull(sow_dates)
 }
-sowing_dates <- sow_date_cal(star_sow, end_sow, clim_data, by = "days")
+sowing_dates <- sow_date_cal(star_sow, end_sow, clim_data, by = "weeks")
 
 
 ## Function to create all combinations of files and parameters(params)

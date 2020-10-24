@@ -65,6 +65,94 @@ plot_prob_forecast <- function(pronostico, id_label = NULL){
     
 }
 
+plot_resampling <- function(data_resampling, weather_data, id_label = NULL, stat = "mean") {
+    
+    #Set Names and labels  
+    var_name = c("rain", "prec", "srad", "tmin", "tmax", "rhum", "wvel")
+    var_label = paste(var_name, c('(mm)', '(mm)', '(MJ/m²d)', '(°C)', '(°C)', '(%)', '(m/s)'))
+    names(var_label) <- var_name
+    
+    #Function to summarize daily to monthly data 
+    to_monthly <- function(data, ...){
+        data %>% 
+            group_by(year, month) %>%
+            summarise(prec = sum(prec, ...), 
+                      tmin = mean(tmin, ...), 
+                      tmax = mean(tmax, ...) 
+                      #            srad = mean(srad), 
+                      #            rhum = mean(rhum),
+                      #            wvel = mean(wvel)
+            ) %>% #write.csv("climate_data_monthly.csv")
+            ungroup() 
+    }
+    
+    #Convert historic data to monthly data  
+    monthly_data <- to_monthly(weather_data, na.rm = T)  
+    
+    #Historic climatological means  
+    data_summary <- monthly_data %>% 
+        select(-year) %>% group_by(month) %>% summarise_all(stat) %>% 
+        pivot_longer(cols = -c(month), names_to = "var", values_to = "value_clim")
+    
+    #Daily scenaries to monthly     
+    data_escenarios <- data_resampling$data[[1]]$data %>% bind_rows(.id = "id") %>%
+        nest(data = -id) %>% mutate(data = map(data, ~to_monthly(.x))) %>%
+        unnest(data) %>%
+        #    dplyr::select(-c(year)) %>%
+        pivot_longer(cols = -c(year, month, id), names_to = "var", values_to = "value")
+    
+    data_plot <- data_escenarios %>% left_join(data_summary) %>% mutate(date = make_date(year, month, 1))
+    
+    
+    #  data_esc_min <- data_resampling$Esc_Type[[1]]$data[[4]] %>% 
+    #    to_monthly() %>%  #dplyr::select(-c(year)) %>%
+    #    pivot_longer(cols = -c(year, month), names_to = "var", values_to = "value") %>% 
+    #    mutate(date = make_date(year, month, 15))
+    #  
+    #  data_esc_max <- data_resampling$Esc_Type[[1]]$data[[1]] %>% 
+    #    to_monthly() %>%  #dplyr::select(-c(year)) %>%
+    #    pivot_longer(cols = -c(year, month), names_to = "var", values_to = "value") %>% 
+    #    mutate(date = make_date(year, month, 15)) 
+    
+    #Plot seasonal forecast
+    ggplot() +
+        #    geom_jitter(data = data_escenarios, aes(x = month, y = value, group = month)) +
+        #    geom_jitter(data = data_plot,
+        #                aes(date, value), color = "grey", alpha = 0.7, width = 5) +
+        geom_boxplot(data = data_plot, aes(x = date, y = value, fill = var, group = month), alpha = 0.7) +
+        geom_line(data = data_plot,
+                  aes(date, value_clim, color = "Normal_Climatologica"),
+                  linetype = "twodash", size = 0.80) +
+        geom_point(data = data_plot,
+                   aes(date, value_clim), color = "red") +
+        #    geom_line(data = data_esc_min, 
+        #              aes(month, value, color = "Rango_probable"),  
+        #              linetype = "twodash", size = 0.50) +
+        #    geom_line(data = data_esc_max,
+        #              aes(month, value),
+        #              color = "red", linetype = "twodash", size = 0.50) +
+        facet_wrap(var ~ ., scales = "free", labeller = labeller(var = var_label)) +
+        #    scale_x_continuous(labels = function(x) month.abb[x], breaks = 1:12) +
+        scale_fill_manual(values = c(prec = "#619CFF", tmax = "orange1", tmin = "gold2"),
+                          labels= c("Precipitacion", "Temperatura Maxima", "Temperatura Minima")) +
+        scale_color_manual(values = c(Normal_Climatologica = "blue")) + #, Media_cimatologica = "red")) +
+        #  xlim(1,6) +
+        theme_bw() + #guides(fill=FALSE) +
+        theme(
+            legend.position="bottom",
+            legend.title = element_blank(),
+            panel.grid.minor = element_blank(),
+            strip.background=element_rect(fill="white", size=1.5, linetype="solid"),
+            strip.text = element_text(face = "bold")) +
+        labs(title = paste0("Prediccion Climatica - ", id_label),
+             subtitle = paste0("Escenarios de Remuestreo Historico: ", min(monthly_data$year), " > ", max(monthly_data$year)), 
+             caption = paste0("Estadistico para calcular climatologia: ", stat),
+             x = "Mes",
+             y =  NULL) 
+    
+}
+
+
 plot_weather_series <- function(weather_data, id_label = NULL){
     
     #Set Names and labels  
@@ -114,89 +202,6 @@ plot_weather_series <- function(weather_data, id_label = NULL){
         scale_color_manual(values = c(prec = "#619CFF", tmax = "orange1", tmin = "gold2"))
     
 }
-
-plot_resampling <- function(data_resampling, weather_data, id_label = NULL, stat = "mean") {
-    
-    #Set Names and labels  
-    var_name = c("rain", "prec", "srad", "tmin", "tmax", "rhum", "wvel")
-    var_label = paste(var_name, c('(mm)', '(mm)', '(MJ/m²d)', '(°C)', '(°C)', '(%)', '(m/s)'))
-    names(var_label) <- var_name
-    
-    #Function to summarize daily to monthly data 
-    to_monthly <- function(data, ...){
-        data %>% 
-            group_by(year, month) %>%
-            summarise(prec = sum(prec, ...), 
-                      tmin = mean(tmin, ...), 
-                      tmax = mean(tmax, ...) 
-                      #            srad = mean(srad), 
-                      #            rhum = mean(rhum),
-                      #            wvel = mean(wvel)
-            ) %>% #write.csv("climate_data_monthly.csv")
-            ungroup() 
-    }
-    
-    #Convert historic data to monthly data  
-    monthly_data <- to_monthly(weather_data, na.rm = T)  
-    
-    #Historic climatological means  
-    data_summary <- monthly_data %>% 
-        select(-year) %>% group_by(month) %>% summarise_all(stat) %>% 
-        pivot_longer(cols = -c(month), names_to = "var", values_to = "value")
-    
-    #Daily scenaries to monthly     
-    data_escenarios <- data_resampling$data[[1]]$data %>% bind_rows(.id = "id") %>%
-        nest(data = -id) %>% mutate(data = map(data, ~to_monthly(.x))) %>%
-        unnest(data) %>%
-        dplyr::select(-c(year)) %>%
-        pivot_longer(cols = -c(month, id), names_to = "var", values_to = "value") 
-    
-    
-    data_esc_min <- data_resampling$Esc_Type[[1]]$data[[4]] %>% 
-        to_monthly() %>%  dplyr::select(-c(year)) %>%
-        pivot_longer(cols = -c(month), names_to = "var", values_to = "value") 
-    
-    data_esc_max <- data_resampling$Esc_Type[[1]]$data[[1]] %>% 
-        to_monthly() %>%  dplyr::select(-c(year)) %>%
-        pivot_longer(cols = -c(month), names_to = "var", values_to = "value")  
-    
-    #Plot seasonal forecast
-    ggplot() +
-        #    geom_jitter(data = data_escenarios, aes(x = month, y = value, group = month)) +
-        geom_boxplot(data = data_escenarios, aes(x = month, y = value, fill = var, group = month), alpha = 0.7) +
-        geom_line(data = data_summary %>% filter(month %in% unique(data_escenarios$month)),
-                  aes(month, value, color = "Normal_Climatologica"),
-                  linetype = "twodash", size = 0.80) +
-        geom_point(data = data_summary %>% filter(month %in% unique(data_escenarios$month)),
-                   aes(month, value), color = "red") +
-        #    geom_line(data = data_esc_min, 
-        #              aes(month, value, color = "Rango_probable"),  
-        #              linetype = "twodash", size = 0.50) +
-        #    geom_line(data = data_esc_max,
-        #              aes(month, value),
-        #              color = "red", linetype = "twodash", size = 0.50) +
-        facet_wrap(var ~ ., scales = "free", labeller = labeller(var = var_label)) +
-        scale_x_continuous(labels = function(x) month.abb[x], breaks = 1:12) +
-        scale_fill_manual(values = c(prec = "#619CFF", tmax = "orange1", tmin = "gold2"),
-                          labels= c("Precipitacion", "Temperatura Maxima", "Temperatura Minima")) +
-        scale_color_manual(values = c(Normal_Climatologica = "blue")) + #, Media_cimatologica = "red")) +
-        #  xlim(1,6) +
-        theme_bw() + #guides(fill=FALSE) +
-        theme(
-            legend.position="bottom",
-            legend.title = element_blank(),
-            panel.grid.minor = element_blank(),
-            strip.background=element_rect(fill="white", size=1.5, linetype="solid"),
-            strip.text = element_text(face = "bold")) +
-        labs(title = paste0("Prediccion Climatica - ", id_label),
-             subtitle = paste0("Escenarios de Remuestreo Historico: ", min(monthly_data$year), " > ", max(monthly_data$year)), 
-             caption = paste0("Estadistico para calcular climatologia: ", stat),
-             x = "Mes",
-             y =  NULL) 
-    
-}
-
-
 
 ### Functions for resampling /// by https://github.com/aesquivel94
 
