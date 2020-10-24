@@ -312,9 +312,9 @@ make_hist_dates <- function (imonth = 6, fmonth = 8, clim_data, date_breaks = 5)
 }
 
 
-to_aquacrop_historic <- test_data %>% select(id_name, Region, Departamento, Municipio, lat, lon, crop, clim_data) %>%
-    mutate(sowing_dates = map(clim_data, ~make_hist_dates(clim_data = .x))) %>%
-    unnest(sowing_dates, .preserve = c(clim_data, crop)) %>% mutate(id2 = paste0("id", 1:399))
+#to_aquacrop_historic <- test_data %>% select(id_name, Region, Departamento, Municipio, lat, lon, crop, clim_data) %>%
+#    mutate(sowing_dates = map(clim_data, ~make_hist_dates(clim_data = .x))) %>%
+#    unnest(sowing_dates, .preserve = c(clim_data, crop)) %>% mutate(id2 = paste0("id", 1:399))
 #
 #to_aquacrop_historic %>% split(., rep(1:4, length.out = nrow(.), each = ceiling(nrow(.)/4))) %>% 
 #    set_names(paste0(getwd(), "/plugin", 1:4,"/")) %>% bind_rows(.id = "plugin_path") %>%
