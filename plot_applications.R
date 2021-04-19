@@ -104,12 +104,12 @@ plot_agroclim_hidric <- function(season_data, id_name, file_str = NA, x_breaks =
 }
 
 
-
-theme_jre <- theme(
-    legend.position="bottom",
-    panel.grid.minor = element_blank(),
-    strip.background=element_rect(fill="white", size=1.5, linetype="solid"),
-    strip.text = element_text(face = "bold"))
+#
+#theme_jre <- theme(
+#    legend.position="bottom",
+#    panel.grid.minor = element_blank(),
+#    strip.background=element_rect(fill="white", size=1.5, linetype="solid"),
+#    strip.text = element_text(face = "bold"))
 
 
 
