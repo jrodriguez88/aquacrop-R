@@ -9,7 +9,7 @@
 
 
 #blind fucntion to load requeriments
-load_agroclim_requeriments <- function(){
+load_agroclimr_requeriments <- function(){
     
     
 ### In developing functions 
@@ -32,7 +32,7 @@ load_agroclim_requeriments <- function(){
 }
 
 ### For CAF - abril- 2020
-crear_directorios <- function(path = ""){ 
+ubicar_directorios <- function(path = ""){ 
 
 directorio <<- paste0(getwd(), path) 
 directorio_datos <<- paste0(directorio, "/data/")
@@ -712,6 +712,34 @@ function_to_save <- function(station, Esc_all, path_out){
 
 
 
+# This function parallelize make_projects_by_date
+#to_aquacrop = tibble with aquacrop project requeriments
+#aquacrop_files = directory with default aquacrop files 
+
+crear_proyectos_agroclimr <- function(to_aquacrop, aquacrop_files){
+    
+    
+    ####################################################### Setting parallel 
+    ncores <- detectCores() - 1
+    cl <- makeCluster(ncores)
+    clusterExport(cl, c(as.vector(lsf.str()),
+                        "to_aquacrop",
+                        "aquacrop_files"))
+    clusterEvalQ(cl, {library(tidyverse);library(lubridate); library(sirad); library(data.table)})
+    
+    #tictoc::tic()
+    parLapply(cl, to_aquacrop %>% pull(to_project), function(x){ 
+        make_project_by_date(id_name = x$id_name,
+                             sowing_dates = x$sowing_dates, 
+                             cultivar = x$cultivar,
+                             soil = x$soil, clim_data = x$clim_data, 
+                             max_crop_duration = 150, 
+                             aquacrop_files = aquacrop_files, plugin_path = x$plugin_path)})
+    #tictoc::toc()
+    stopCluster(cl)
+    #########################################################################
+    
+}
 
 
 

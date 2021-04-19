@@ -3,11 +3,11 @@
 # Author: Rodriguez-Espinoza J.
 # 2019
 
-### Load packages
-library(tidyverse)
-library(data.table)
-library(sirad)
-library(lubridate)
+#### Load packages
+#library(tidyverse)
+#library(data.table)
+#library(sirad)
+#library(lubridate)
 
 ### read_data from csv. format (oryza)
 #dir.create(paste0(getwd(), "/outputs/weather"))
