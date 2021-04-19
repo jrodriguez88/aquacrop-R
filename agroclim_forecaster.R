@@ -32,7 +32,7 @@ load_agroclim_requeriments <- function(){
 }
 
 ### For CAF - abril- 2020
-crear_directorios_COF <- function(path = "/agroclim_COF/"){ 
+crear_directorios <- function(path = ""){ 
 
 directorio <<- paste0(getwd(), path) 
 directorio_datos <<- paste0(directorio, "/data/")
@@ -50,9 +50,10 @@ plot_prob_forecast <- function(pronostico, id_label = NULL){
     pronostico %>% mutate(Type = factor(Type, c("above", "normal", "below")),
                           Season = factor(Season, c('DJF', 'JFM', 'FMA', 'MAM', 'AMJ', 'MJJ', 'JJA', 'JAS', 'ASO', 'SON', 'OND', 'NDJ'))) %>%
         ggplot(aes(x = Season, y = Prob, fill = Type)) + 
-        geom_col(position = "dodge", color="gray") +
+        geom_col(position = "dodge", color="darkgray") +
         theme_minimal() +
-        scale_fill_manual(values = c(above = "blue", normal = "lightgreen", below = "red"), 
+#        scale_fill_manual(values = c(above = "blue", normal = "lightgreen", below = "red"), 
+        scale_fill_manual(values = c(above = "chartreuse4", normal = "goldenrod1", below = "saddlebrown"), 
                           labels = c("Arriba de lo Normal", "Cercano a lo Normal", "Debajo de lo Normal")) +
         labs(title = "Prediccion Climatica Estacional", 
              subtitle = id_label,
@@ -78,7 +79,7 @@ plot_resampling <- function(data_resampling, weather_data, id_label = NULL, stat
             group_by(year, month) %>%
             summarise(prec = sum(prec, ...), 
                       tmin = mean(tmin, ...), 
-                      tmax = mean(tmax, ...) 
+                      tmax = mean(tmax, ...), .groups = 'drop' 
                       #            srad = mean(srad), 
                       #            rhum = mean(rhum),
                       #            wvel = mean(wvel)
@@ -133,7 +134,8 @@ plot_resampling <- function(data_resampling, weather_data, id_label = NULL, stat
         #              color = "red", linetype = "twodash", size = 0.50) +
         facet_wrap(var ~ ., scales = "free", labeller = labeller(var = var_label)) +
         #    scale_x_continuous(labels = function(x) month.abb[x], breaks = 1:12) +
-        scale_fill_manual(values = c(prec = "#619CFF", tmax = "orange1", tmin = "gold2"),
+#        scale_fill_manual(values = c(prec = "#619CFF", tmax = "orange1", tmin = "gold2"),
+        scale_fill_manual(values = c(prec = "#619CFF", tmax = "orangered3", tmin = "orange3"),                  
                           labels= c("Precipitacion", "Temperatura Maxima", "Temperatura Minima")) +
         scale_color_manual(values = c(Normal_Climatologica = "blue")) + #, Media_cimatologica = "red")) +
         #  xlim(1,6) +
@@ -152,7 +154,6 @@ plot_resampling <- function(data_resampling, weather_data, id_label = NULL, stat
     
 }
 
-
 plot_weather_series <- function(weather_data, id_label = NULL){
     
     #Set Names and labels  
@@ -165,7 +166,7 @@ plot_weather_series <- function(weather_data, id_label = NULL){
             group_by(year, month) %>%
             summarise(prec = sum(prec, ...), 
                       tmin = mean(tmin, ...), 
-                      tmax = mean(tmax, ...)) %>%  
+                      tmax = mean(tmax, ...), .groups = 'drop') %>%  
             #            srad = mean(srad), 
             #            rhum = mean(rhum),
             #            wvel = mean(wvel)
@@ -181,7 +182,7 @@ plot_weather_series <- function(weather_data, id_label = NULL){
         dplyr::select(-c(year)) %>%
         pivot_longer(cols = -c(month), names_to = "var", values_to = "value") %>%
         ggplot(aes(month, value, fill= var, group = month)) +
-        geom_boxplot() +
+        geom_boxplot(alpha = 0.7) +
         scale_x_continuous(labels = function(x) month.abb[x], breaks = 1:12) +
         #  stat_summary(fun.data = mean_cl_normal, geom="bar") +
         #  geom_line(data = monthly_summary %>% 
@@ -198,8 +199,8 @@ plot_weather_series <- function(weather_data, id_label = NULL){
              subtitle = "Boxplot Mensual",
              x = "Mes",
              y =  NULL) +
-        scale_fill_manual(values = c(prec = "#619CFF", tmax = "orange1", tmin = "gold2"))+
-        scale_color_manual(values = c(prec = "#619CFF", tmax = "orange1", tmin = "gold2"))
+        scale_fill_manual(values = c(prec = "#619CFF", tmax = "orangered3", tmin = "orange3"))+
+        scale_color_manual(values = c(prec = "#619CFF", tmax = "orangered3", tmin = "orange3"))
     
 }
 
