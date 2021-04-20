@@ -34,7 +34,7 @@ make_weather_aquacrop <-function(path, id_name, wth_data, lat, alt, co2_file = "
             
             if (!"wvel" %in% colnames(wth_data)) {
                 wth_data <- mutate(wth_data, wvel = 2)
-                message("Wind Speed = 2 m/s was used")
+#                message("Wind Speed = 2 m/s was used")
             } 
             
             ## Estimate clear sky transmissivity
@@ -90,7 +90,7 @@ make_weather_aquacrop <-function(path, id_name, wth_data, lat, alt, co2_file = "
         
     } else {
         
-        message("No data to calculate ETo!")
+        message("No data to calculate ETo!.")
         
     }
     
