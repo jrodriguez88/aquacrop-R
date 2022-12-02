@@ -11,7 +11,7 @@
 #file_str <- c("clima", "cultivar", "soil", "crop_sys")
 plot_agroclim_forecast <- function(season_data, id_name, file_str = NA, yield_units = "t/ha", x_breaks = "5 days"){
     
-    if(is.na(file_str)){
+    if(all(is.na(file_str))){
         data <- season_data
     } else {
         data <- season_data %>% 
@@ -64,7 +64,7 @@ plot_agroclim_forecast <- function(season_data, id_name, file_str = NA, yield_un
 # Plor hidric demand to rise potential production
 plot_agroclim_hidric <- function(season_data, id_name, file_str = NA, x_breaks = "5 days"){
     
-    if(is.na(file_str)){
+    if(all(is.na(file_str))){
         data <- season_data
     } else {
         data <- season_data %>% 
